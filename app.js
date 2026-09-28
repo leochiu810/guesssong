@@ -1,4 +1,4 @@
-import { Game } from './core.js?v=20260928-4';
+import { Game } from './core.js?v=20260928-5';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 const sections = ['home','game','result','failure'];

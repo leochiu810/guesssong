@@ -21,6 +21,6 @@ export class Game {
     this.answers.push(result); return result;
   }
   next() { if (this.phase !== 'reveal') return false; this.index++; this.phase = this.index === 10 ? 'finished' : 'ready'; return true; }
-  get total() { return Math.round(this.answers.reduce((n, a) => n + a.points, 0) / 10); }
+  get total() { return this.answers.reduce((n, a) => n + a.points, 0); }
   get correct() { return this.answers.filter(a => a.correct).length; }
 }
