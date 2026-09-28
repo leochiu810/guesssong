@@ -1,9 +1,9 @@
 import { Game } from './core.js';
 const $ = id => document.getElementById(id);
-let catalog, game, audio, tick, watchdog, generation = 0, blocked = false, currentCategory;
+let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 const sections = ['home','game','result','failure'];
 function screen(id) { sections.forEach(s => $(s).hidden = s !== id); }
-function stop() { generation++; clearInterval(tick); clearTimeout(watchdog); blocked = false; $('unlock').hidden = true; if (audio) { audio.onended = audio.onerror = audio.onplaying = null; audio.pause(); audio.removeAttribute('src'); audio.load(); audio = null; } }
+function stop() { generation++; clearInterval(tick); clearTimeout(watchdog); clearTimeout(advanceTimer); blocked = false; $('unlock').hidden = true; if (audio) { audio.onended = audio.onerror = audio.onplaying = null; audio.pause(); audio.removeAttribute('src'); audio.load(); audio = null; } }
 function fail(message) { stop(); game = null; $('failure-message').textContent = message; screen('failure'); }
 function home() { stop(); game = null; screen('home'); }
 function play() {
@@ -35,14 +35,18 @@ function answer(id) {
   const q = game.questions[game.index]; stop(); $('audio-status').textContent = '答案已揭曉';
   for (const b of $('options').children) { b.disabled = true; if (Number(b.dataset.id) === q.answer.id) { b.classList.add('right'); b.textContent = `✓ ${b.textContent}`; } else if (Number(b.dataset.id) === id) { b.classList.add('wrong'); b.textContent = `× ${b.textContent}`; } }
   $('correct').textContent = game.correct; $('answer-result').textContent = `${result.correct ? '答對了！' : '這次沒猜中'} 本題 ${result.points} 分`;
-  $('answer-title').textContent = q.answer.title; $('answer-artist').textContent = q.answer.artist; $('next').textContent = game.index === 9 ? '查看本局成績 →' : '下一題 →'; $('reveal').hidden = false; $('next').focus({preventScroll:true});
+  $('answer-title').textContent = q.answer.title; $('answer-artist').textContent = q.answer.artist; $('reveal').hidden = false;
+  const token = generation;
+  advanceTimer = setTimeout(() => {
+    if (token !== generation || !game?.next()) return;
+    if (game.phase === 'finished') finish(); else showQuestion();
+  }, 800);
 }
 function finish() {
   stop(); $('final-score').textContent = game.total; $('final-correct').textContent = `答對 ${game.correct} / 10 題 · ${currentCategory.name}`;
   $('history').replaceChildren(...game.questions.map((q,i) => { const row = document.createElement('div'); row.className = 'history-row'; const a = document.createElement('a'); a.href = q.answer.storeUrl; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = `${i + 1}. ${q.answer.title} ↗`; const artist = document.createElement('small'); artist.textContent = q.answer.artist; a.append(artist); const points = document.createElement('span'); points.textContent = `${game.answers[i].correct ? '✓' : '×'} ${game.answers[i].points} 分`; row.append(a,points); return row; }));
   screen('result'); $('result').focus();
 }
-$('next').onclick = () => { if (!game?.next()) return; if (game.phase === 'finished') finish(); else showQuestion(); };
 $('exit').onclick = home; $('again').onclick = home; $('recover').onclick = home;
 function unlock(event) {
   if (!blocked || game?.phase !== 'question' || event.target.closest('button,a,summary') || (event.type === 'keydown' && event.key !== 'Enter')) return;

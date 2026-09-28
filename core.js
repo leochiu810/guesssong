@@ -9,7 +9,7 @@ export function createRound(songs, random = Math.random) {
   if (unique.length < 10) throw new Error('此分類題庫不足十首，請更新題庫。');
   return shuffle(unique, random).slice(0, 10).map(answer => ({answer, options: shuffle([answer, ...shuffle(unique.filter(s => titleKey(s.title) !== titleKey(answer.title)), random).slice(0, 8)], random)}));
 }
-export function score(elapsed, correct) { return correct ? Math.max(0, 100 - 2 * Math.ceil(Math.max(0, elapsed - 5000) / 1000)) : 0; }
+export function score(elapsed, correct) { return correct ? Math.max(0, 100 - 5 * Math.ceil(Math.max(0, elapsed) / 1000)) : 0; }
 export class Game {
   constructor(songs, now = () => performance.now()) { this.questions = createRound(songs); this.now = now; this.index = 0; this.answers = []; this.phase = 'ready'; }
   show() { if (this.phase !== 'ready') return false; this.started = this.now(); this.phase = 'question'; return true; }
