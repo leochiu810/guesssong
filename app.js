@@ -1,4 +1,4 @@
-import { Game } from './core.js?v=20260928-5';
+import { Game } from './core.js?v=0.1.2';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 const sections = ['home','game','result','failure'];
@@ -40,7 +40,7 @@ function answer(id) {
   advanceTimer = setTimeout(() => {
     if (token !== generation || !game?.next()) return;
     if (game.phase === 'finished') finish(); else showQuestion();
-  }, 800);
+  }, 2800);
 }
 function finish() {
   stop(); $('final-score').textContent = game.total; $('final-correct').textContent = `答對 ${game.correct} / 10 題 · ${currentCategory.name}`;
@@ -57,7 +57,7 @@ document.addEventListener('visibilitychange',() => { if (game?.phase !== 'questi
 window.addEventListener('pagehide',home);
 try {
   const response = await fetch('./data/catalog.json', {cache: 'no-store'}); if (!response.ok) throw Error(); catalog = await response.json();
-  if (catalog.categories.length !== 6 || catalog.categories.some(c => c.songs.length < 10)) throw Error();
+  if (catalog.categories.length !== 1 || catalog.categories.some(c => c.songs.length < 10)) throw Error();
   $('languages').replaceChildren(...catalog.categories.map(c => { const b = document.createElement('button'); b.className = 'language'; const text = document.createElement('span'); const name = document.createElement('strong'); name.textContent = c.name; const n = document.createElement('small'); n.textContent = `${c.songs.length} 首歌曲`; text.append(name,n); const arrow = document.createElement('span'); arrow.className = 'arrow'; arrow.textContent = '↗'; b.append(text,arrow); b.onclick = () => { try { currentCategory = c; game = new Game(c.songs); showQuestion(); } catch (error) { fail(error.message); } }; return b; }));
   $('load-status').textContent = `題庫更新：${catalog.generatedAt.slice(0,10)} · 點選分類開始`;
 } catch { $('load-status').textContent = '題庫載入失敗，請重新整理。若從本機開啟，請先執行 npm start。'; }
