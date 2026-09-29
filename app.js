@@ -1,6 +1,7 @@
-import { Game } from './core.js?v=0.1.2';
+import { Game, selectedPool, uniqueSongCount } from './core.js?v=0.2.0';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
+let artistInputs = [];
 const sections = ['home','game','result','failure'];
 function screen(id) { sections.forEach(s => $(s).hidden = s !== id); }
 function stop() { generation++; clearInterval(tick); clearTimeout(watchdog); clearTimeout(advanceTimer); blocked = false; $('unlock').hidden = true; if (audio) { audio.onended = audio.onerror = audio.onplaying = null; audio.pause(); audio.removeAttribute('src'); audio.load(); audio = null; } }
@@ -23,7 +24,7 @@ function showQuestion() {
   screen('game'); game.show(); $('question').focus({preventScroll:true});
   tick = setInterval(() => { if (game?.phase === 'question') $('timer').textContent = `${((performance.now() - game.started) / 1000).toFixed(1)} 秒`; },100);
   audio = new Audio(); audio.preload = 'none'; audio.src = q.answer.previewUrl;
-  audio.onplaying = () => { if (token !== generation) return; clearTimeout(watchdog); $('audio-status').textContent = '正在播放 Apple 歌曲試聽'; };
+  audio.onplaying = () => { if (token !== generation) return; clearTimeout(watchdog); $('audio-status').textContent = ''; };
   audio.onwaiting = audio.onstalled = () => { if (token !== generation || game?.phase !== 'question' || blocked || document.hidden) return; clearTimeout(watchdog); $('audio-status').textContent = '試聽正在緩衝…'; watchdog = setTimeout(() => { if (token === generation) fail('試聽串流中斷，本局不計分。請確認網路後重試。'); },20000); };
   audio.onerror = () => { if (token === generation && game?.phase === 'question') fail('Apple 試聽載入失敗。本局已中止，不產生成績；請確認網路後重新開始。'); };
   audio.onended = () => { if (token === generation) $('audio-status').textContent = '試聽已結束，請選擇你聽到的歌名。'; };
@@ -55,9 +56,35 @@ function unlock(event) {
 document.addEventListener('click',unlock); document.addEventListener('keydown',unlock);
 document.addEventListener('visibilitychange',() => { if (game?.phase !== 'question' || !audio) return; if (document.hidden) audio.pause(); else play(); });
 window.addEventListener('pagehide',home);
+function chosenArtists() { return artistInputs.filter(input => input.checked).map(input => input.value); }
+function updateSelection() {
+  const names = chosenArtists();
+  const count = uniqueSongCount(selectedPool(catalog.categories[0].songs, names));
+  $('selection-status').textContent = `已選 ${names.length} 位歌手 · ${count} 個不同歌名${count < 10 ? '｜請至少選 2 位歌手，湊足 10 個不同歌名。' : ''}`;
+  $('start-game').disabled = count < 10;
+}
+$('select-all').onclick = () => { artistInputs.forEach(input => input.checked = true); updateSelection(); };
+$('select-none').onclick = () => { artistInputs.forEach(input => input.checked = false); updateSelection(); };
+$('start-game').onclick = () => {
+  if (!catalog) return;
+  const names = chosenArtists();
+  const songs = selectedPool(catalog.categories[0].songs, names);
+  if (uniqueSongCount(songs) < 10) { updateSelection(); return; }
+  try { currentCategory = {name: `中文 · ${names.length} 位歌手`}; game = new Game(songs); showQuestion(); }
+  catch (error) { fail(error.message); }
+};
 try {
   const response = await fetch('./data/catalog.json', {cache: 'no-store'}); if (!response.ok) throw Error(); catalog = await response.json();
   if (catalog.categories.length !== 1 || catalog.categories.some(c => c.songs.length < 10)) throw Error();
-  $('languages').replaceChildren(...catalog.categories.map(c => { const b = document.createElement('button'); b.className = 'language'; const text = document.createElement('span'); const name = document.createElement('strong'); name.textContent = c.name; const n = document.createElement('small'); n.textContent = `${c.songs.length} 首歌曲`; text.append(name,n); const arrow = document.createElement('span'); arrow.className = 'arrow'; arrow.textContent = '↗'; b.append(text,arrow); b.onclick = () => { try { currentCategory = c; game = new Game(c.songs); showQuestion(); } catch (error) { fail(error.message); } }; return b; }));
-  $('load-status').textContent = `題庫更新：${catalog.generatedAt.slice(0,10)} · 點選分類開始`;
+  const category = catalog.categories[0];
+  $('artists').replaceChildren(...category.artists.map(name => {
+    const label = document.createElement('label'); label.className = 'artist-choice';
+    const input = document.createElement('input'); input.type = 'checkbox'; input.value = name; input.checked = true;
+    input.onchange = updateSelection; artistInputs.push(input);
+    const text = document.createElement('span'); text.textContent = name;
+    const count = document.createElement('small'); count.textContent = `${selectedPool(category.songs, [name]).length} 首`;
+    label.append(input,text,count); return label;
+  }));
+  $('artist-picker').hidden = false; updateSelection();
+  $('load-status').textContent = `題庫更新：${catalog.generatedAt.slice(0,10)} · 中文 ${category.songs.length} 筆歌曲`;
 } catch { $('load-status').textContent = '題庫載入失敗，請重新整理。若從本機開啟，請先執行 npm start。'; }

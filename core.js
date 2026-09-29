@@ -5,10 +5,15 @@ export function shuffle(items, random = Math.random) {
   return out;
 }
 export function createRound(songs, random = Math.random) {
-  const unique = [...new Map(songs.map(s => [titleKey(s.title), s])).values()];
+  const unique = [...new Map(shuffle(songs, random).map(s => [titleKey(s.title), s])).values()];
   if (unique.length < 10) throw new Error('此分類題庫不足十首，請更新題庫。');
   return shuffle(unique, random).slice(0, 10).map(answer => ({answer, options: shuffle([answer, ...shuffle(unique.filter(s => titleKey(s.title) !== titleKey(answer.title)), random).slice(0, 8)], random)}));
 }
+export function selectedPool(songs, artists) {
+  const names = new Set(artists);
+  return songs.filter(s => names.has(s.catalogArtist || s.artist));
+}
+export function uniqueSongCount(songs) { return new Set(songs.map(s => titleKey(s.title))).size; }
 export function score(elapsed, correct) { return correct ? Math.max(0, 100 - 3 * Math.ceil(Math.max(0, elapsed) / 1000)) : 0; }
 export class Game {
   constructor(songs, now = () => performance.now()) { this.questions = createRound(songs); this.now = now; this.index = 0; this.answers = []; this.phase = 'ready'; }
