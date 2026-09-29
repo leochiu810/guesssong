@@ -6,3 +6,5 @@
 .challenge-levels{line-height:2.4;padding-left:28px;font-size:20px}#challenge-result{padding:20px;background:#e9eddf;border-radius:14px;font-weight:700}
 
 #audio-status{font-size:12px;margin:24px 0}#audio-status:empty{margin:24px 0 0}#game:focus{outline:none}
+
+.picker-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.picker-heading h2{margin:0;font-size:23px;min-width:0}.picker-heading #start-game{margin:0;width:auto;flex-shrink:0;padding:12px 16px;white-space:nowrap}@media(max-width:600px){.picker-heading{gap:8px}.picker-heading h2{font-size:17px;line-height:1.5}.picker-heading #start-game{font-size:13px;padding:12px 10px}}

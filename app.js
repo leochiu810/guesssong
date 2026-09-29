@@ -1,4 +1,4 @@
-import { Game, selectedPool, uniqueSongCount } from './core.js?v=0.3.4';
+import { Game, selectedPool, uniqueSongCount } from './core.js?v=0.3.9';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 let artistInputs = [];
@@ -113,9 +113,9 @@ try {
     const input = document.createElement('input'); input.type = 'checkbox'; input.value = name; input.checked = true;
     input.onchange = updateSelection; artistInputs.push(input);
     const text = document.createElement('span'); text.textContent = name;
-    const count = document.createElement('small'); count.textContent = `${selectedPool(category.songs, [name]).length} 首`;
-    label.append(input,text,count); return label;
+    label.append(input,text); return label;
   }));
   $('choose-challenge').disabled = false; $('choose-chinese').disabled = false; updateSelection();
-  $('load-status').textContent = `題庫更新：${catalog.generatedAt.slice(0,10)} · 中文 ${category.songs.length} 筆歌曲`;
+  $('load-status').textContent = '';
+  $('load-status').hidden = true;
 } catch { $('load-status').textContent = '題庫載入失敗，請重新整理。若從本機開啟，請先執行 npm start。'; }
