@@ -1,4 +1,4 @@
-import { Game, selectedPool, uniqueSongCount } from './core.js?v=0.3.1';
+import { Game, selectedPool, uniqueSongCount } from './core.js?v=0.3.3';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 let artistInputs = [];
@@ -23,7 +23,7 @@ function showQuestion() {
   $('reveal').hidden = true; $('category').textContent = `${currentCategory.name} · 旋律挑戰`; $('progress').textContent = `第 ${game.index + 1} / 10 題`; $('correct').textContent = game.correct; $('bar').style.width = `${(game.index + 1) * 10}%`; $('timer').textContent = '0.0 秒';
   $('audio-status').textContent = '正在連接 Apple 試聽…'; $('song-link').href = q.answer.storeUrl;
   $('options').replaceChildren(...q.options.map(s => { const b = document.createElement('button'); b.textContent = s.title; b.dataset.id = s.id; b.onclick = () => answer(s.id); return b; }));
-  screen('game'); game.show(); $('question').focus({preventScroll:true});
+  screen('game'); game.show(); $('game').focus({preventScroll:true});
   tick = setInterval(() => { if (game?.phase === 'question') $('timer').textContent = `${((performance.now() - game.started) / 1000).toFixed(1)} 秒`; },100);
   audio ??= new Audio(); audio.preload = 'none'; audio.src = q.answer.previewUrl;
   audio.onplaying = () => { if (token !== generation) return; clearTimeout(watchdog); $('audio-status').textContent = ''; };
