@@ -1,12 +1,14 @@
-import { Game, selectedPool, uniqueSongCount } from './core.js?v=0.2.3';
+import { Game, selectedPool, uniqueSongCount } from './core.js?v=0.3.0';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 let artistInputs = [];
-const sections = ['home','library','game','result','failure'];
+let mode = 'practice', level = 0;
+const thresholds = [500, 600, 700, 800, 900];
+const sections = ['home','library','challenge','game','result','failure'];
 function screen(id) { sections.forEach(s => $(s).hidden = s !== id); }
 function stop(keepAudio = false) { generation++; clearInterval(tick); clearTimeout(watchdog); clearTimeout(advanceTimer); blocked = false; $('unlock').hidden = true; if (audio) { audio.onended = audio.onerror = audio.onplaying = audio.onwaiting = audio.onstalled = null; audio.pause(); if (!keepAudio) { audio.removeAttribute('src'); audio.load(); audio = null; } } }
 function fail(message) { stop(); game = null; $('failure-message').textContent = message; screen('failure'); }
-function home() { stop(); game = null; screen('home'); }
+function home() { stop(); game = null; level = 0; mode = 'practice'; screen('home'); }
 function play() {
   if (!audio || game?.phase !== 'question') return;
   const token = generation;
@@ -46,10 +48,37 @@ function answer(id) {
 function finish() {
   stop(); $('final-score').textContent = game.total; $('final-correct').textContent = `答對 ${game.correct} / 10 題 · ${currentCategory.name}`;
   $('history').replaceChildren(...game.questions.map((q,i) => { const row = document.createElement('div'); row.className = 'history-row'; const a = document.createElement('a'); a.href = q.answer.storeUrl; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = `${i + 1}. ${q.answer.title} ↗`; const artist = document.createElement('small'); artist.textContent = q.answer.artist; a.append(artist); const points = document.createElement('span'); points.textContent = `${game.answers[i].correct ? '✓' : '×'} ${game.answers[i].points} 分`; row.append(a,points); return row; }));
+  const challenge = mode === 'challenge';
+  const passed = challenge && game.total >= thresholds[level];
+  $('challenge-result').hidden = !challenge;
+  $('challenge-result').textContent = challenge ? (passed ? (level === 4 ? '恭喜！五關全部通過！' : `第 ${level + 1} 關通過！可挑戰下一關。`) : `未達 ${thresholds[level]} 分，再挑戰本關一次！`) : '';
+  $('next-level').hidden = !passed || level === 4;
+  $('retry-level').hidden = !challenge || passed;
+  $('again').textContent = challenge ? '回首頁' : '再玩一次 →';
   screen('result'); $('result').focus();
 }
 $('choose-chinese').onclick = () => { if (!catalog) return; screen('library'); $('library-title').focus(); };
 $('back-languages').onclick = home;
+$('choose-challenge').onclick = () => { if (!catalog) return; screen('challenge'); $('challenge-title').focus(); };
+$('challenge-home').onclick = home;
+function startChallenge() {
+  if (!catalog) return;
+  stop(); mode = 'challenge';
+  try {
+    currentCategory = {name: `挑戰模式 · 第 ${level + 1} / 5 關 · 目標 ${thresholds[level]} 分`};
+    game = new Game(catalog.categories.flatMap(category => category.songs));
+    showQuestion();
+  } catch (error) { fail(error.message); }
+}
+$('start-challenge').onclick = () => { level = 0; startChallenge(); };
+$('next-level').onclick = () => {
+  if (mode !== 'challenge' || game?.phase !== 'finished' || game.total < thresholds[level] || level >= 4) return;
+  level++; startChallenge();
+};
+$('retry-level').onclick = () => {
+  if (mode !== 'challenge' || game?.phase !== 'finished' || game.total >= thresholds[level]) return;
+  startChallenge();
+};
 $('exit').onclick = home; $('again').onclick = home; $('recover').onclick = home;
 function unlock(event) {
   if (!blocked || game?.phase !== 'question' || event.target.closest('button,a,summary') || (event.type === 'keydown' && event.key !== 'Enter')) return;
@@ -72,7 +101,7 @@ $('start-game').onclick = () => {
   const names = chosenArtists();
   const songs = selectedPool(catalog.categories[0].songs, names);
   if (uniqueSongCount(songs) < 10) { updateSelection(); return; }
-  try { currentCategory = {name: `中文 · ${names.length} 位歌手`}; game = new Game(songs); showQuestion(); }
+  try { mode = 'practice'; currentCategory = {name: `練習模式 · 中文 · ${names.length} 位歌手`}; game = new Game(songs); showQuestion(); }
   catch (error) { fail(error.message); }
 };
 try {
@@ -87,6 +116,6 @@ try {
     const count = document.createElement('small'); count.textContent = `${selectedPool(category.songs, [name]).length} 首`;
     label.append(input,text,count); return label;
   }));
-  $('choose-chinese').disabled = false; updateSelection();
+  $('choose-challenge').disabled = false; $('choose-chinese').disabled = false; updateSelection();
   $('load-status').textContent = `題庫更新：${catalog.generatedAt.slice(0,10)} · 中文 ${category.songs.length} 筆歌曲`;
 } catch { $('load-status').textContent = '題庫載入失敗，請重新整理。若從本機開啟，請先執行 npm start。'; }
