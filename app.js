@@ -1,11 +1,11 @@
-import { Game, selectedPool, uniqueSongCount } from './core.js?v=0.3.3';
+import { Game, selectedPool, uniqueSongCount } from './core.js?v=0.3.4';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 let artistInputs = [];
 let mode = 'practice', level = 0;
 const thresholds = [500, 600, 700, 800, 900];
 const sections = ['home','library','challenge','game','result','failure'];
-function screen(id) { sections.forEach(s => $(s).hidden = s !== id); }
+function screen(id) { sections.forEach(s => $(s).hidden = s !== id); $('exit').hidden = id !== 'game'; $('header-label').hidden = id === 'game'; }
 function stop(keepAudio = false) { generation++; clearInterval(tick); clearTimeout(watchdog); clearTimeout(advanceTimer); blocked = false; $('unlock').hidden = true; if (audio) { audio.onended = audio.onerror = audio.onplaying = audio.onwaiting = audio.onstalled = null; audio.pause(); if (!keepAudio) { audio.removeAttribute('src'); audio.load(); audio = null; } } }
 function fail(message) { stop(); game = null; $('failure-message').textContent = message; screen('failure'); }
 function home() { stop(); game = null; level = 0; mode = 'practice'; screen('home'); }
@@ -20,7 +20,7 @@ function play() {
 }
 function showQuestion() {
   stop(true); const token = generation; const q = game.questions[game.index];
-  $('reveal').hidden = true; $('category').textContent = `${currentCategory.name} · 旋律挑戰`; $('progress').textContent = `第 ${game.index + 1} / 10 題`; $('correct').textContent = game.correct; $('bar').style.width = `${(game.index + 1) * 10}%`; $('timer').textContent = '0.0 秒';
+  $('reveal').hidden = true; $('progress').textContent = `第 ${game.index + 1} / 10 題`; $('correct').textContent = game.correct; $('bar').style.width = `${(game.index + 1) * 10}%`; $('timer').textContent = '0.0 秒';
   $('audio-status').textContent = '正在連接 Apple 試聽…'; $('song-link').href = q.answer.storeUrl;
   $('options').replaceChildren(...q.options.map(s => { const b = document.createElement('button'); b.textContent = s.title; b.dataset.id = s.id; b.onclick = () => answer(s.id); return b; }));
   screen('game'); game.show(); $('game').focus({preventScroll:true});
