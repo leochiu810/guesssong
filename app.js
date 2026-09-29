@@ -1,7 +1,9 @@
-import { Game, selectedPool, uniqueSongCount } from './core.js?v=0.3.10';
+import { Game, selectedPool, uniqueSongCount } from './core.js?v=0.4.0';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
-let artistInputs = [];
+let artistInputs = [], practiceCategory;
+const artistSelections = new Map();
+const languageButtons = {mandarin:'choose-chinese',english:'choose-english',japanese:'choose-japanese',korean:'choose-korean'};
 let mode = 'practice', level = 0;
 const thresholds = [500, 600, 700, 800, 900];
 const sections = ['home','library','challenge','game','result','failure'];
@@ -39,7 +41,7 @@ function answer(id) {
   for (const b of $('options').children) { b.disabled = true; if (Number(b.dataset.id) === q.answer.id) { b.classList.add('right'); b.textContent = `✓ ${b.textContent}`; } else if (Number(b.dataset.id) === id) { b.classList.add('wrong'); b.textContent = `× ${b.textContent}`; } }
   $('correct').textContent = game.correct; $('answer-result').textContent = result.correct ? '答對了！' : '這次沒猜中';
   $('answer-points').textContent = result.points;
-  $('answer-title').textContent = q.answer.title; $('answer-artist').textContent = q.answer.artist; $('reveal').hidden = false;
+  $('answer-title').textContent = q.answer.title; $('answer-artist').textContent = q.answer.artist + (q.answer.selectionNote ? ` · ${q.answer.selectionNote}` : ''); $('reveal').hidden = false;
   const token = generation;
   advanceTimer = setTimeout(() => {
     if (token !== generation || !game?.next()) return;
@@ -48,7 +50,7 @@ function answer(id) {
 }
 function finish() {
   stop(); $('final-score').textContent = game.total; $('final-correct').textContent = `答對 ${game.correct} / 10 題 · ${currentCategory.name}`;
-  $('history').replaceChildren(...game.questions.map((q,i) => { const row = document.createElement('div'); row.className = 'history-row'; const a = document.createElement('a'); a.href = q.answer.storeUrl; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = `${i + 1}. ${q.answer.title} ↗`; const artist = document.createElement('small'); artist.textContent = q.answer.artist; a.append(artist); const points = document.createElement('span'); points.textContent = `${game.answers[i].correct ? '✓' : '×'} ${game.answers[i].points} 分`; row.append(a,points); return row; }));
+  $('history').replaceChildren(...game.questions.map((q,i) => { const row = document.createElement('div'); row.className = 'history-row'; const a = document.createElement('a'); a.href = q.answer.storeUrl; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = `${i + 1}. ${q.answer.title} ↗`; const artist = document.createElement('small'); artist.textContent = q.answer.artist + (q.answer.selectionNote ? ` · ${q.answer.selectionNote}` : ''); a.append(artist); const points = document.createElement('span'); points.textContent = `${game.answers[i].correct ? '✓' : '×'} ${game.answers[i].points} 分`; row.append(a,points); return row; }));
   const challenge = mode === 'challenge';
   const passed = challenge && game.total >= thresholds[level];
   $('challenge-result').hidden = !challenge;
@@ -58,7 +60,11 @@ function finish() {
   $('again').textContent = challenge ? '回首頁' : '再玩一次 →';
   screen('result'); $('result').focus();
 }
-$('choose-chinese').onclick = () => { if (!catalog) return; screen('library'); $('library-title').focus(); };
+for (const [code,id] of Object.entries(languageButtons)) $(id).onclick = () => {
+  if (!catalog) return;
+  renderArtists(catalog.categories.find(category => category.code === code));
+  screen('library'); $('library-title').focus();
+};
 $('back-languages').onclick = home;
 $('choose-challenge').onclick = () => { if (!catalog) return; screen('challenge'); $('challenge-title').focus(); };
 $('challenge-home').onclick = home;
@@ -91,8 +97,8 @@ window.addEventListener('pagehide',home);
 function chosenArtists() { return artistInputs.filter(input => input.checked).map(input => input.value); }
 function updateSelection() {
   const names = chosenArtists();
-  const count = uniqueSongCount(selectedPool(catalog.categories[0].songs, names));
-  $('selection-status').textContent = `已選 ${names.length} 位歌手 · ${count} 個不同歌名${count < 10 ? '｜請至少選 2 位歌手，湊足 10 個不同歌名。' : ''}`;
+  const count = uniqueSongCount(selectedPool(practiceCategory.songs, names));
+  $('selection-status').textContent = `已選 ${names.length} 位歌手 · ${count} 個不同歌名${count < 10 ? '｜請再勾選歌手，湊足 10 個不同歌名。' : ''}`;
   $('start-game').disabled = count < 10;
 }
 $('select-all').onclick = () => { artistInputs.forEach(input => input.checked = true); updateSelection(); };
@@ -100,23 +106,33 @@ $('select-none').onclick = () => { artistInputs.forEach(input => input.checked =
 $('start-game').onclick = () => {
   if (!catalog) return;
   const names = chosenArtists();
-  const songs = selectedPool(catalog.categories[0].songs, names);
+  const songs = selectedPool(practiceCategory.songs, names);
   if (uniqueSongCount(songs) < 10) { updateSelection(); return; }
-  try { mode = 'practice'; currentCategory = {name: `練習模式 · 中文 · ${names.length} 位歌手`}; game = new Game(songs); showQuestion(); }
+  try { mode = 'practice'; currentCategory = {name: `練習模式 · ${practiceCategory.name} · ${names.length} 位歌手`}; game = new Game(songs); showQuestion(); }
   catch (error) { fail(error.message); }
 };
-try {
-  const response = await fetch('./data/catalog.json', {cache: 'no-store'}); if (!response.ok) throw Error(); catalog = await response.json();
-  if (catalog.categories.length !== 1 || catalog.categories.some(c => c.songs.length < 10)) throw Error();
-  const category = catalog.categories[0];
+function renderArtists(category) {
+  if (!category) return;
+  if (practiceCategory) artistSelections.set(practiceCategory.code, new Set(chosenArtists()));
+  practiceCategory = category; artistInputs = [];
+  const saved = artistSelections.get(category.code);
+  $('library-title').textContent = `練習模式 · ${category.name}題庫`;
   $('artists').replaceChildren(...category.artists.map(name => {
     const label = document.createElement('label'); label.className = 'artist-choice';
-    const input = document.createElement('input'); input.type = 'checkbox'; input.value = name; input.checked = true;
+    const input = document.createElement('input'); input.type = 'checkbox'; input.value = name; input.checked = saved ? saved.has(name) : true;
     input.onchange = updateSelection; artistInputs.push(input);
     const text = document.createElement('span'); text.textContent = name;
     label.append(input,text); return label;
   }));
-  $('choose-challenge').disabled = false; $('choose-chinese').disabled = false; updateSelection();
+  updateSelection();
+}
+
+try {
+  const response = await fetch('./data/catalog.json', {cache: 'no-store'}); if (!response.ok) throw Error(); catalog = await response.json();
+  if (catalog.categories.length !== 4 || catalog.categories.some(c => c.songs.length < 10)) throw Error();
+  renderArtists(catalog.categories[0]);
+  $('choose-challenge').disabled = false;
+  for(const id of Object.values(languageButtons)) $(id).disabled = false;
   $('load-status').textContent = '';
   $('load-status').hidden = true;
 } catch { $('load-status').textContent = '題庫載入失敗，請重新整理。若從本機開啟，請先執行 npm start。'; }
