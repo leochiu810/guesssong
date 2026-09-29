@@ -29,3 +29,8 @@ export class Game {
   get total() { return this.answers.reduce((n, a) => n + a.points, 0); }
   get correct() { return this.answers.filter(a => a.correct).length; }
 }
+
+export function challengePool(categories, level) {
+  const languages = ['mandarin', 'english', 'japanese', 'korean'].slice(0, Math.min(level + 1, 4));
+  return categories.filter(category => languages.includes(category.code)).flatMap(category => category.songs);
+}

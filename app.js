@@ -1,4 +1,4 @@
-import { Game, selectedPool, uniqueSongCount } from './core.js?v=0.4.0';
+import { Game, selectedPool, uniqueSongCount, challengePool } from './core.js?v=0.4.1';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 let artistInputs = [], practiceCategory;
@@ -73,7 +73,7 @@ function startChallenge() {
   stop(); mode = 'challenge';
   try {
     currentCategory = {name: `挑戰模式 · 第 ${level + 1} / 5 關 · 目標 ${thresholds[level]} 分`};
-    game = new Game(catalog.categories.flatMap(category => category.songs));
+    game = new Game(challengePool(catalog.categories, level));
     showQuestion();
   } catch (error) { fail(error.message); }
 }
