@@ -1,4 +1,4 @@
-import { Game, selectedPool, uniqueSongCount, challengePool } from './core.js?v=0.4.2';
+import { Game, selectedPool, uniqueSongCount, challengePool } from './core.js?v=0.4.4';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 let artistInputs = [], practiceCategory;
@@ -30,11 +30,15 @@ function play() {
 }
 function showQuestion() {
   stop(true); const token = generation; const q = game.questions[game.index];
-  $('reveal').hidden = true; $('progress').textContent = `第 ${game.index + 1} / 10 題`; $('correct').textContent = game.correct; $('bar').style.width = `${(game.index + 1) * 10}%`; $('timer').textContent = '0.0 秒';
+  $('reveal').hidden = true; $('progress').textContent = `第 ${game.index + 1} / 10 題`; $('correct').textContent = game.correct; $('bar').style.width = `${(game.index + 1) * 10}%`; $('timer').textContent = '0.0 秒'; $('live-score').textContent = game.total;
   $('audio-status').textContent = '正在連接 Apple 試聽…'; $('song-link').href = q.answer.storeUrl;
   $('options').replaceChildren(...q.options.map(s => { const b = document.createElement('button'); b.textContent = s.title; b.dataset.id = s.id; b.onclick = () => answer(s.id); return b; }));
   screen('game'); game.show(); $('game').focus({preventScroll:true});
-  tick = setInterval(() => { if (game?.phase === 'question') $('timer').textContent = `${((performance.now() - game.started) / 1000).toFixed(1)} 秒`; },100);
+  tick = setInterval(() => {
+    if (game?.phase !== 'question') return;
+    const elapsed = performance.now() - game.started;
+    $('timer').textContent = (elapsed / 1000).toFixed(1) + ' 秒';
+  },100);
   audio ??= new Audio(); audio.volume = volume; audio.muted = volume === 0; audio.preload = 'none'; audio.src = q.answer.previewUrl;
   audio.onplaying = () => { if (token !== generation) return; clearTimeout(watchdog); $('audio-status').textContent = ''; };
   audio.onwaiting = audio.onstalled = () => { if (token !== generation || game?.phase !== 'question' || blocked || document.hidden) return; clearTimeout(watchdog); $('audio-status').textContent = '試聽正在緩衝…'; watchdog = setTimeout(() => { if (token === generation) fail('試聽串流中斷，本局不計分。請確認網路後重試。'); },20000); };
@@ -48,7 +52,7 @@ function answer(id) {
   const q = game.questions[game.index]; stop(true); $('audio-status').textContent = '答案已揭曉';
   for (const b of $('options').children) { b.disabled = true; if (Number(b.dataset.id) === q.answer.id) { b.classList.add('right'); b.textContent = `✓ ${b.textContent}`; } else if (Number(b.dataset.id) === id) { b.classList.add('wrong'); b.textContent = `× ${b.textContent}`; } }
   $('correct').textContent = game.correct; $('answer-result').textContent = result.correct ? '答對了！' : '這次沒猜中';
-  $('answer-points').textContent = result.points;
+  $('answer-points').textContent = result.points; $('live-score').textContent = game.total;
   $('answer-title').textContent = q.answer.title; $('answer-artist').textContent = q.answer.artist + (q.answer.selectionNote ? ` · ${q.answer.selectionNote}` : ''); $('reveal').hidden = false;
   const token = generation;
   advanceTimer = setTimeout(() => {
