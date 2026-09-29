@@ -1,4 +1,4 @@
-import { Game, selectedPool, uniqueSongCount } from './core.js?v=0.2.0';
+import { Game, selectedPool, uniqueSongCount } from './core.js?v=0.2.1';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 let artistInputs = [];
