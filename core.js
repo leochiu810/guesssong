@@ -14,7 +14,7 @@ export function selectedPool(songs, artists) {
   return songs.filter(s => names.has(s.catalogArtist || s.artist));
 }
 export function uniqueSongCount(songs) { return new Set(songs.map(s => titleKey(s.title))).size; }
-export function score(elapsed, correct) { return correct ? Math.max(0, 100 - 3 * Math.ceil(Math.max(0, elapsed) / 1000)) : 0; }
+export function score(elapsed, correct) { return correct ? Math.max(0, 100 - 2 * Math.ceil(Math.max(0, elapsed) / 1000)) : 0; }
 export class Game {
   constructor(songs, now = () => performance.now()) { this.questions = createRound(songs); this.now = now; this.index = 0; this.answers = []; this.phase = 'ready'; }
   show() { if (this.phase !== 'ready') return false; this.started = this.now(); this.phase = 'question'; return true; }
