@@ -1,8 +1,16 @@
-import { Game, selectedPool, uniqueSongCount, challengePool } from './core.js?v=0.4.1';
+import { Game, selectedPool, uniqueSongCount, challengePool } from './core.js?v=0.4.2';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 let artistInputs = [], practiceCategory;
 const artistSelections = new Map();
+let volume = 1;
+$('volume').oninput = () => {
+  const value = Number($('volume').value);
+  if (!Number.isFinite(value)) return;
+  volume = Math.max(0, Math.min(100, value)) / 100;
+  $('volume-value').textContent = volume === 0 ? '靜音' : Math.round(volume * 100) + '%';
+  if (audio) { audio.volume = volume; audio.muted = volume === 0; }
+};
 const languageButtons = {mandarin:'choose-chinese',english:'choose-english',japanese:'choose-japanese',korean:'choose-korean'};
 let mode = 'practice', level = 0;
 const thresholds = [500, 600, 700, 800, 900];
@@ -27,7 +35,7 @@ function showQuestion() {
   $('options').replaceChildren(...q.options.map(s => { const b = document.createElement('button'); b.textContent = s.title; b.dataset.id = s.id; b.onclick = () => answer(s.id); return b; }));
   screen('game'); game.show(); $('game').focus({preventScroll:true});
   tick = setInterval(() => { if (game?.phase === 'question') $('timer').textContent = `${((performance.now() - game.started) / 1000).toFixed(1)} 秒`; },100);
-  audio ??= new Audio(); audio.preload = 'none'; audio.src = q.answer.previewUrl;
+  audio ??= new Audio(); audio.volume = volume; audio.muted = volume === 0; audio.preload = 'none'; audio.src = q.answer.previewUrl;
   audio.onplaying = () => { if (token !== generation) return; clearTimeout(watchdog); $('audio-status').textContent = ''; };
   audio.onwaiting = audio.onstalled = () => { if (token !== generation || game?.phase !== 'question' || blocked || document.hidden) return; clearTimeout(watchdog); $('audio-status').textContent = '試聽正在緩衝…'; watchdog = setTimeout(() => { if (token === generation) fail('試聽串流中斷，本局不計分。請確認網路後重試。'); },20000); };
   audio.onerror = () => { if (token === generation && game?.phase === 'question') fail('Apple 試聽載入失敗。本局已中止，不產生成績；請確認網路後重新開始。'); };
@@ -88,7 +96,7 @@ $('retry-level').onclick = () => {
 };
 $('exit').onclick = home; $('again').onclick = home; $('recover').onclick = home;
 function unlock(event) {
-  if (!blocked || game?.phase !== 'question' || event.target.closest('button,a,summary') || (event.type === 'keydown' && event.key !== 'Enter')) return;
+  if (!blocked || game?.phase !== 'question' || event.target.closest('button,a,summary,input,label') || (event.type === 'keydown' && event.key !== 'Enter')) return;
   const token = generation; clearTimeout(watchdog); watchdog = setTimeout(() => {if (token === generation) fail('啟用後仍無法載入試聽，請確認網路後重試。');},20000); play();
 }
 document.addEventListener('click',unlock); document.addEventListener('keydown',unlock);

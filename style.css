@@ -10,3 +10,5 @@
 .picker-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.picker-heading h2{margin:0;font-size:23px;min-width:0}.picker-heading #start-game{margin:0;width:auto;flex-shrink:0;padding:12px 16px;white-space:nowrap}@media(max-width:600px){.picker-heading{gap:8px}.picker-heading h2{font-size:17px;line-height:1.5}.picker-heading #start-game{font-size:13px;padding:12px 10px}}
 
 .question-score{display:flex;align-items:baseline;gap:10px}.question-score strong{font-size:clamp(52px,10vw,72px);font-weight:900;line-height:1.15;letter-spacing:-2px}
+
+.volume-control{display:flex;align-items:center;gap:12px;margin:16px 0 0;font-size:14px}.volume-control label{flex-shrink:0;font-weight:700}.volume-control input{flex:1;min-width:0;max-width:260px;height:44px;accent-color:#45682d;cursor:pointer}.volume-control input:focus-visible{outline:3px solid #688322;outline-offset:3px}.volume-control output{min-width:44px;font-variant-numeric:tabular-nums}#volume-help{font-size:11px;color:#617164;margin:0 0 16px}
