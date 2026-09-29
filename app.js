@@ -1,4 +1,4 @@
-import { Game, selectedPool, uniqueSongCount } from './core.js?v=0.3.9';
+import { Game, selectedPool, uniqueSongCount } from './core.js?v=0.3.10';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 let artistInputs = [];
@@ -37,7 +37,8 @@ function answer(id) {
   const result = game?.answer(id); if (!result) return;
   const q = game.questions[game.index]; stop(true); $('audio-status').textContent = '答案已揭曉';
   for (const b of $('options').children) { b.disabled = true; if (Number(b.dataset.id) === q.answer.id) { b.classList.add('right'); b.textContent = `✓ ${b.textContent}`; } else if (Number(b.dataset.id) === id) { b.classList.add('wrong'); b.textContent = `× ${b.textContent}`; } }
-  $('correct').textContent = game.correct; $('answer-result').textContent = `${result.correct ? '答對了！' : '這次沒猜中'} 本題 ${result.points} 分`;
+  $('correct').textContent = game.correct; $('answer-result').textContent = result.correct ? '答對了！' : '這次沒猜中';
+  $('answer-points').textContent = result.points;
   $('answer-title').textContent = q.answer.title; $('answer-artist').textContent = q.answer.artist; $('reveal').hidden = false;
   const token = generation;
   advanceTimer = setTimeout(() => {
