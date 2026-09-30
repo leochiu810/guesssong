@@ -1,4 +1,4 @@
-import { Game, selectedPool, uniqueSongCount, challengePool } from './core.js?v=0.4.4';
+import { Game, selectedPool, uniqueSongCount, challengePool } from './core.js?v=0.4.6';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 let artistInputs = [], practiceCategory;
@@ -66,7 +66,7 @@ function finish() {
   const challenge = mode === 'challenge';
   const passed = challenge && game.total >= thresholds[level];
   $('challenge-result').hidden = !challenge;
-  $('challenge-result').textContent = challenge ? (passed ? (level === 4 ? '恭喜！五關全部通過！' : `第 ${level + 1} 關通過！可挑戰下一關。`) : `未達 ${thresholds[level]} 分，再挑戰本關一次！`) : '';
+  $('challenge-result').textContent = challenge ? (passed ? (level === 4 ? '恭喜！五關全部通過！' : `第 ${level + 1} 關通過！可挑戰下一關。`) : `未達 ${thresholds[level]} 分，挑戰失敗！請從第一關重新開始。`) : '';
   $('next-level').hidden = !passed || level === 4;
   $('retry-level').hidden = !challenge || passed;
   $('again').textContent = challenge ? '回首頁' : '再玩一次 →';
@@ -96,7 +96,7 @@ $('next-level').onclick = () => {
 };
 $('retry-level').onclick = () => {
   if (mode !== 'challenge' || game?.phase !== 'finished' || game.total >= thresholds[level]) return;
-  startChallenge();
+  level = 0; startChallenge();
 };
 $('exit').onclick = home; $('again').onclick = home; $('recover').onclick = home;
 function unlock(event) {
