@@ -7,7 +7,12 @@ export function shuffle(items, random = Math.random) {
 export function createRound(songs, random = Math.random) {
   const unique = [...new Map(shuffle(songs, random).map(s => [titleKey(s.title), s])).values()];
   if (unique.length < 10) throw new Error('此分類題庫不足十首，請更新題庫。');
-  return shuffle(unique, random).slice(0, 10).map(answer => ({answer, options: shuffle([answer, ...shuffle(unique.filter(s => titleKey(s.title) !== titleKey(answer.title)), random).slice(0, 8)], random)}));
+  return shuffle(unique, random).slice(0, 10).map(answer => {
+    const candidates = songs.filter(s => s.language === answer.language && titleKey(s.title) !== titleKey(answer.title));
+    const distinct = [...new Map(shuffle(candidates, random).map(s => [titleKey(s.title), s])).values()];
+    if (distinct.length < 8) throw new Error('此語言題庫不足九個不同歌名，請更新題庫。');
+    return {answer, options: shuffle([answer, ...shuffle(distinct, random).slice(0, 8)], random)};
+  });
 }
 export function selectedPool(songs, artists) {
   const names = new Set(artists);
