@@ -1,7 +1,7 @@
-import {LocalRankedGame} from './ranking-local.js?v=0.6.2';
-import {RankingClient, rankingConfigured} from './ranking-client.js?v=0.6.2';
-import {createRankedUI, renderBoard} from './ranking-ui.js?v=0.6.2-names2';
-import { Game, selectedPool, uniqueSongCount, challengePool } from './core.js?v=0.6.2';
+import {LocalRankedGame} from './ranking-local.js?v=0.7.0';
+import {RankingClient, rankingConfigured} from './ranking-client.js?v=0.7.0';
+import {createRankedUI, renderBoard} from './ranking-ui.js?v=0.7.0';
+import { Game, selectedPool, uniqueSongCount, challengePool } from './core.js?v=0.7.0';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 let artistInputs = [], practiceCategory;
@@ -167,7 +167,7 @@ async function showLeaderboard(){
  $('leaderboard-rows').replaceChildren();
  if(!cloudReady){$('leaderboard-status').textContent='排行榜尚未開放。';return;}
  $('leaderboard-status').textContent='正在讀取排名…';
- try{const rows=await rankingClient.board();if(request!==boardRequest)return;renderBoard($('leaderboard-rows'),rows);$('leaderboard-status').textContent='前50名 · 通過關數優先，再比累積總分；同分先達成者在前。';}
+ try{const rows=await rankingClient.board();if(request!==boardRequest)return;renderBoard($('leaderboard-rows'),rows);$('leaderboard-status').textContent='前50名 · 到達關卡優先，再比該關最高得分；同分先達成者在前。';}
  catch(error){if(request===boardRequest)$('leaderboard-status').textContent=error.message;}
 }
 $('start-ranked').onclick=()=>{
@@ -176,6 +176,7 @@ $('start-ranked').onclick=()=>{
  if(!/^[\p{L}\p{N} _.-]{1,16}$/u.test(name)){$('ranking-setup-status').textContent='暱稱請使用1至16個中英文字、數字、空格或 _ . -';return;}
  stop();screen('ranked');rankedUI.start(name);
 };
+
 
 
 

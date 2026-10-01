@@ -26,7 +26,7 @@ Deno.serve(async request=>{
   const user=await auth.json();if(!user.id)return reply({error:'登入無效。'},401);
 
   const result=validateResult(body);
-  await db('rpc/submit_ranked_result','POST',{p_user:user.id,p_nickname:result.nickname,p_passed:result.passed,p_total:result.total});
+  await db('rpc/submit_ranked_stage','POST',{p_user:user.id,p_nickname:result.nickname,p_passed:result.passed,p_total:result.total});
   return reply({saved:true});
  }catch(error){return reply({error:error instanceof SyntaxError?'要求格式錯誤。':(error instanceof Error?error.message:'連線失敗。')},400);}
 });

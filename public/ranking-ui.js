@@ -1,4 +1,5 @@
 const thresholds=[500,600,700,800,900];
+export const highestScore=state=>state.stageScore;
 const el=(tag,text,className)=>{const node=document.createElement(tag);if(text!==undefined)node.textContent=text;if(className)node.className=className;return node;};
 const button=(text,action,className='primary')=>{const b=el('button',text,className);b.type='button';b.onclick=action;return b;};
 export function createRankedUI({root,client,onExit,onBoard,getVolume,onVolume}){
@@ -8,7 +9,7 @@ export function createRankedUI({root,client,onExit,onBoard,getVolume,onVolume}){
  function fail(message){stop();root.replaceChildren(el('h2','排名挑戰暫停'),el('p',message),el('p','已完成關卡的最佳紀錄仍會保留。','fine'),button('回首頁',()=>{cancel();onExit();}));}
  async function send(action,extra={}){
   if(busy)return;busy=true;const token=epoch;
-  try{const next=await client.command(action,state,extra);if(token!==epoch)return;state=next;busy=false;render();}
+  try{const next=await client.command(action,state,extra);if(token!==epoch)return;state=next;busy=false;render();if(action==='start'||action==='next-level'){const note=el('p','正在更新關卡紀錄…','fine');root.append(note);client.save().then(()=>{if(token===epoch)note.remove();}).catch(()=>{if(token===epoch)note.textContent='關卡紀錄暫未儲存，完成本關後會再次儲存。';});}}
   catch(error){if(token!==epoch)return;busy=false;fail(error.message);}
  }
  function play(status,unlock){
@@ -18,7 +19,7 @@ export function createRankedUI({root,client,onExit,onBoard,getVolume,onVolume}){
   stop();root.replaceChildren();
   if(state.phase==='result'){
    const passed=state.stageScore>=thresholds[state.level];
-   root.append(el('h2',`第 ${state.level+1} 關${passed?'通過':'挑戰失敗'}`),el('p',`本關 ${state.stageScore} / 1,000 分`,'ranked-score'),el('p',`本次挑戰：通過 ${state.passed} 關 · 累積 ${state.total} 分`));
+   root.append(el('h2',`第 ${state.level+1} 關${passed?'通過':'挑戰失敗'}`),el('p',`本關 ${state.stageScore} / 1,000 分`,'ranked-score'),el('p',`本次挑戰：第 ${state.level+1} 關 · 最高得分 ${state.stageScore} 分`));
    const saving=el('p','正在儲存成績…','fine'),token=epoch;
    const retry=button('重試儲存',save,'text-button');retry.hidden=true;root.append(saving,retry);
    async function save(){retry.hidden=true;saving.textContent='正在儲存成績…';try{await client.save();if(token!==epoch)return;saving.textContent='成績已送達，排行榜會保留你的最佳紀錄。';}catch(error){if(token!==epoch)return;saving.textContent='成績尚未儲存：'+error.message+' 請在離開或開始下一關前重試。';retry.hidden=false;}}
@@ -30,8 +31,8 @@ export function createRankedUI({root,client,onExit,onBoard,getVolume,onVolume}){
    const history=el('div');for(const row of state.history){const line=el('div',undefined,'history-row'),link=el('a',row.title);link.href=row.storeUrl;link.target='_blank';link.rel='noopener noreferrer';line.append(link,el('span',`${row.correct?'✓':'×'} ${row.points} 分`));history.append(line);}root.append(history);return;
   }
   const top=el('div',undefined,'topline');top.append(el('h2',`排名挑戰 · 第 ${state.level+1} 關`),button('結束本局',()=>{cancel();onExit();},'text-button'));root.append(top);
-  const stats=el('div',undefined,'stats'),clock=el('span','0.0 秒');stats.append(el('span',`第 ${state.index+1} / 10 題`),clock,el('strong',`累積 ${state.stageScore} 分`,'ranked-score'));root.append(stats);
-  root.append(el('p',`通關需要 ${thresholds[state.level]} 分`,'pass-target'));
+  const stats=el('div',undefined,'stats'),clock=el('span','0.0 秒');stats.append(el('span',`第 ${state.index+1} / 10 題`),clock,el('strong',`最高得分 ${highestScore(state)} 分`,'ranked-score'));root.append(stats);
+  root.append(el('p',`本關 ${state.stageScore} 分 · 通關需要 ${thresholds[state.level]} 分`,'pass-target'));
   const status=el('p',state.phase==='question'?'正在連接 Apple 試聽…':'答案已揭曉','fine');root.append(status);
   const unlock=button('播放歌曲',()=>play(status,unlock),'text-button');unlock.hidden=true;root.append(unlock);
   const volume=el('div',undefined,'volume-control'),label=el('label','音量'),slider=el('input'),output=el('output',Math.round(getVolume()*100)+'%');slider.type='range';slider.id='ranked-volume';slider.min='0';slider.max='100';slider.value=String(getVolume()*100);label.htmlFor=slider.id;
@@ -58,7 +59,7 @@ export function bestByNickname(rows){
 }
 export function renderBoard(root,rows){
  root.replaceChildren();const entries=bestByNickname(rows);
- const table=el('table');table.className='ranking-table';table.setAttribute('aria-label','排行榜成績');const head=el('thead'),heading=el('tr');for(const title of ['名次','暱稱','通過關數','累積分數']){const th=el('th',title);th.scope='col';heading.append(th);}head.append(heading);table.append(head);
+ const table=el('table');table.className='ranking-table';table.setAttribute('aria-label','排行榜成績');const head=el('thead'),heading=el('tr');for(const title of ['名次','暱稱','關卡','最高得分']){const th=el('th',title);th.scope='col';heading.append(th);}head.append(heading);table.append(head);
  const body=el('tbody');entries.forEach((row,i)=>{const tr=el('tr');for(const value of [i+1,row.nickname,row.passed+' / 5',row.total])tr.append(el('td',String(value)));body.append(tr);});
  if(!entries.length){const tr=el('tr'),td=el('td','尚無成績，來挑戰第一筆紀錄！','ranking-empty');td.colSpan=4;tr.append(td);body.append(tr);}
  table.append(body);const frame=el('div',undefined,'ranking-table-frame');frame.append(table);root.append(frame);
