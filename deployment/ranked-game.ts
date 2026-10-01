@@ -3,10 +3,12 @@ export const SEASON='stage-v2';
 export function validateResult(body){
  if(body?.action!=='submit')throw Error('請更新遊戲網頁後再提交成績。');
  const nickname=String(body.nickname??'').trim().normalize('NFKC');
- if(!/^[\p{L}\p{N} _.-]{1,16}$/u.test(nickname))throw Error('暱稱格式錯誤。');
+ if(!/^[\p{L}\p{N}\p{M}\p{So}\p{Sk}\u200D _.-]{1,16}$/u.test(nickname))throw Error('暱稱格式錯誤。');
  const {passed,total}=body;
  if(!Number.isInteger(passed)||passed<1||passed>5||!Number.isInteger(total)||total<0||total>1000)throw Error('成績範圍錯誤。');
- return {nickname,passed,total};
+ const cumulative=body.cumulative??null;
+ if(cumulative!==null&&(!Number.isInteger(cumulative)||cumulative<total||cumulative>(passed-1)*1000+total))throw Error('總得分範圍錯誤。');
+ return {nickname,passed,total,cumulative};
 }
 
 const url=Deno.env.get('SUPABASE_URL')!;
@@ -24,7 +26,7 @@ Deno.serve(async request=>{
  if(request.method==='OPTIONS')return new Response(null,{status:204,headers});
  try{
   if(request.method==='GET'){
-   const rows=await db(`ranked_nickname_best?season=eq.${SEASON}&select=nickname,passed,total,achieved_at&order=passed.desc,total.desc,achieved_at.asc,name_key.asc&limit=50`);
+   const rows=await db(`ranked_nickname_best?season=eq.${SEASON}&select=nickname,passed,total,cumulative,achieved_at&order=passed.desc,total.desc,achieved_at.asc,name_key.asc&limit=50`);
    return reply({rows});
   }
   if(request.method!=='POST')return reply({error:'操作不支援。'},405);
@@ -36,7 +38,7 @@ Deno.serve(async request=>{
   const user=await auth.json();if(!user.id)return reply({error:'登入無效。'},401);
 
   const result=validateResult(body);
-  await db('rpc/submit_ranked_stage','POST',{p_user:user.id,p_nickname:result.nickname,p_passed:result.passed,p_total:result.total});
+  await db('rpc/submit_ranked_stage_total','POST',{p_user:user.id,p_nickname:result.nickname,p_passed:result.passed,p_total:result.total,p_cumulative:result.cumulative});
   return reply({saved:true});
  }catch(error){return reply({error:error instanceof SyntaxError?'要求格式錯誤。':(error instanceof Error?error.message:'連線失敗。')},400);}
 });

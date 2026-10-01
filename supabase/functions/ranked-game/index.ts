@@ -14,7 +14,7 @@ Deno.serve(async request=>{
  if(request.method==='OPTIONS')return new Response(null,{status:204,headers});
  try{
   if(request.method==='GET'){
-   const rows=await db(`ranked_nickname_best?season=eq.${SEASON}&select=nickname,passed,total,achieved_at&order=passed.desc,total.desc,achieved_at.asc,name_key.asc&limit=50`);
+   const rows=await db(`ranked_nickname_best?season=eq.${SEASON}&select=nickname,passed,total,cumulative,achieved_at&order=passed.desc,total.desc,achieved_at.asc,name_key.asc&limit=50`);
    return reply({rows});
   }
   if(request.method!=='POST')return reply({error:'操作不支援。'},405);
@@ -26,7 +26,7 @@ Deno.serve(async request=>{
   const user=await auth.json();if(!user.id)return reply({error:'登入無效。'},401);
 
   const result=validateResult(body);
-  await db('rpc/submit_ranked_stage','POST',{p_user:user.id,p_nickname:result.nickname,p_passed:result.passed,p_total:result.total});
+  await db('rpc/submit_ranked_stage_total','POST',{p_user:user.id,p_nickname:result.nickname,p_passed:result.passed,p_total:result.total,p_cumulative:result.cumulative});
   return reply({saved:true});
  }catch(error){return reply({error:error instanceof SyntaxError?'要求格式錯誤。':(error instanceof Error?error.message:'連線失敗。')},400);}
 });
