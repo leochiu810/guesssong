@@ -61,9 +61,9 @@ export function bestByNickname(rows){
 }
 export function renderBoard(root,rows){
  root.replaceChildren();const entries=bestByNickname(rows);
- const table=el('table');table.className='ranking-table';table.setAttribute('aria-label','排行榜成績');const head=el('thead'),heading=el('tr');for(const title of ['名次','暱稱','關卡','最高得分','總得分']){const th=el('th',title);th.scope='col';heading.append(th);}head.append(heading);table.append(head);
- const body=el('tbody');entries.forEach((row,i)=>{const tr=el('tr');for(const value of [i+1,row.nickname,row.passed+' / 5',row.total,row.cumulative??'—'])tr.append(el('td',String(value)));body.append(tr);});
- if(!entries.length){const tr=el('tr'),td=el('td','尚無成績，來挑戰第一筆紀錄！','ranking-empty');td.colSpan=5;tr.append(td);body.append(tr);}
+ const table=el('table');table.className='ranking-table';table.setAttribute('aria-label','排行榜成績');const head=el('thead'),heading=el('tr');for(const title of ['名次','暱稱','關卡','最高得分']){const th=el('th',title);th.scope='col';heading.append(th);}head.append(heading);table.append(head);
+ const body=el('tbody');entries.forEach((row,i)=>{const tr=el('tr');for(const value of [i+1,row.nickname,row.passed+' / 5',row.total])tr.append(el('td',String(value)));body.append(tr);});
+ if(!entries.length){const tr=el('tr'),td=el('td','尚無成績，來挑戰第一筆紀錄！','ranking-empty');td.colSpan=4;tr.append(td);body.append(tr);}
  table.append(body);const frame=el('div',undefined,'ranking-table-frame');frame.append(table);root.append(frame);
 }
 

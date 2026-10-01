@@ -1,7 +1,7 @@
-import {LocalRankedGame} from './ranking-local.js?v=0.8.2';
-import {RankingClient, rankingConfigured} from './ranking-client.js?v=0.8.2';
-import {createRankedUI, renderBoard} from './ranking-ui.js?v=0.8.2';
-import { Game, selectedPool, uniqueSongCount, challengePool, createBalancedRound } from './core.js?v=0.8.2';
+import {LocalRankedGame} from './ranking-local.js?v=0.8.3';
+import {RankingClient, rankingConfigured} from './ranking-client.js?v=0.8.3';
+import {createRankedUI, renderBoard} from './ranking-ui.js?v=0.8.3';
+import { Game, selectedPool, uniqueSongCount, challengePool, createBalancedRound } from './core.js?v=0.8.3';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 let artistInputs = [], practiceCategory;
