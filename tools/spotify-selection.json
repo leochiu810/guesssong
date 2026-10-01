@@ -6446,198 +6446,6 @@
       "checkedAt": "2026-09-29"
     },
     {
-      "name": "Sabrina Carpenter",
-      "language": "english",
-      "targetCount": 7,
-      "songs": [
-        {
-          "rank": 1,
-          "sourceRank": 1,
-          "title": "Espresso",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:2HRqTpkrJO5ggZyyK6NPWz",
-          "appleId": 1752214923,
-          "appleTitle": "Espresso",
-          "appleArtistId": 390647681,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 2,
-          "sourceRank": 2,
-          "title": "Manchild",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:2BwO5K8Q7EPAJSGze3AAh9",
-          "appleId": 1819377511,
-          "appleTitle": "Manchild",
-          "appleArtistId": 390647681,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 3,
-          "sourceRank": 3,
-          "title": "Please Please Please",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:2tHwzyyOLoWSFqYNjeVMzj",
-          "appleId": 1752214912,
-          "appleTitle": "Please Please Please",
-          "appleArtistId": 390647681,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 4,
-          "sourceRank": 4,
-          "title": "Taste",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:5G2f63n7IPVPPjfNIGih7Q",
-          "appleId": 1750307079,
-          "appleTitle": "Taste",
-          "appleArtistId": 390647681,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 5,
-          "sourceRank": 5,
-          "title": "House Tour",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:25jgQBxuUkGDdCG1WGKKN9",
-          "appleId": 1819861170,
-          "appleTitle": "House Tour",
-          "appleArtistId": 390647681,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 6,
-          "sourceRank": 6,
-          "title": "Tears",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:42VUCXerQ5qTr4Qp6PhKo4",
-          "appleId": 1819861157,
-          "appleTitle": "Tears",
-          "appleArtistId": 390647681,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 7,
-          "sourceRank": 7,
-          "title": "Nonsense",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:6dgUya35uo964z7GZXM07g",
-          "appleId": 1631579019,
-          "appleTitle": "Nonsense",
-          "appleArtistId": 390647681,
-          "appleCountry": "TW"
-        }
-      ],
-      "aliases": [
-        "Sabrina Carpenter"
-      ],
-      "sourceUrl": "https://open.spotify.com/embed/artist/74KM79TiuVKeVCqs8QtB0B?locale=zh-TW",
-      "checkedAt": "2026-09-29"
-    },
-    {
-      "name": "Dua Lipa",
-      "language": "english",
-      "targetCount": 7,
-      "songs": [
-        {
-          "rank": 1,
-          "sourceRank": 1,
-          "title": "Training Season",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:5b5cPscqVEMChvDqscVw26",
-          "appleId": 6805877227,
-          "appleTitle": "Training Season",
-          "appleArtistId": 1031397873,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 3,
-          "sourceRank": 3,
-          "title": "Don't Start Now",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:3PfIrDoz19wz7qK7tYeu62",
-          "appleId": 1484636829,
-          "appleTitle": "Don't Start Now",
-          "appleArtistId": 1031397873,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 5,
-          "sourceRank": 5,
-          "title": "One Kiss (with Dua Lipa)",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:76dIZzTdrNO15mGBrU3MHi",
-          "appleId": 1364709436,
-          "appleTitle": "One Kiss",
-          "appleArtistId": 201955086,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 6,
-          "sourceRank": 6,
-          "title": "Levitating (feat. DaBaby)",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:5nujrmhLynf4yMoMtj8AQF",
-          "appleId": 1538003843,
-          "appleTitle": "Levitating",
-          "appleArtistId": 1031397873,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 7,
-          "sourceRank": 7,
-          "title": "New Rules",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:5fVcK4ibJpRsjvG5aIYTb7",
-          "appleId": 1228739609,
-          "appleTitle": "New Rules",
-          "appleArtistId": 1031397873,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 9,
-          "sourceRank": 9,
-          "title": "Break My Heart",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:017PF4Q3l4DBUiWoXk4OWT",
-          "appleId": 1538004012,
-          "appleTitle": "Break My Heart",
-          "appleArtistId": 1031397873,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 10,
-          "sourceRank": 10,
-          "title": "Houdini",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:6D8y7Bck8h11byRY88Pt2z",
-          "appleId": 1714502827,
-          "appleTitle": "Houdini",
-          "appleArtistId": 1031397873,
-          "appleCountry": "TW"
-        }
-      ],
-      "aliases": [
-        "Dua Lipa"
-      ],
-      "sourceUrl": "https://open.spotify.com/embed/artist/6M2wZ9GZgrQXHCFfjv46we?locale=zh-TW",
-      "checkedAt": "2026-09-29"
-    },
-    {
       "name": "Coldplay",
       "language": "english",
       "targetCount": 7,
@@ -6924,198 +6732,6 @@
         "Adele"
       ],
       "sourceUrl": "https://open.spotify.com/embed/artist/4dpARuHxo51G3z768sgnrY?locale=zh-TW",
-      "checkedAt": "2026-09-29"
-    },
-    {
-      "name": "Rihanna",
-      "language": "english",
-      "targetCount": 7,
-      "songs": [
-        {
-          "rank": 1,
-          "sourceRank": 1,
-          "title": "Don't Stop The Music",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:0ByMNEPAPpOR5H69DVrTNy",
-          "appleId": 1441154439,
-          "appleTitle": "Don't Stop The Music",
-          "appleArtistId": 63346553,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 2,
-          "sourceRank": 2,
-          "title": "Umbrella",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:49FYlytm3dAAraYgpoJZux",
-          "appleId": 1441154437,
-          "appleTitle": "Umbrella (feat. JAŸ-Z)",
-          "appleArtistId": 63346553,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 3,
-          "sourceRank": 3,
-          "title": "Only Girl (In The World)",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:2ENexcMEMsYk0rVJigVD3i",
-          "appleId": 1440896009,
-          "appleTitle": "Only Girl (In The World)",
-          "appleArtistId": 63346553,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 4,
-          "sourceRank": 4,
-          "title": "We Found Love",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:6qn9YLKt13AGvpq9jfO8py",
-          "appleId": 1443062143,
-          "appleTitle": "We Found Love (feat. Calvin Harris)",
-          "appleArtistId": 63346553,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 5,
-          "sourceRank": 5,
-          "title": "S&M",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:7ySUcLPVX7KudhnmNcgY2D",
-          "appleId": 1444900365,
-          "appleTitle": "S&M (Joe Bermudez Chico Dub)",
-          "appleArtistId": 63346553,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 6,
-          "sourceRank": 6,
-          "title": "Kiss It Better",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:0UHB9METy4VCXNgkcGqHqS",
-          "appleId": 1440924789,
-          "appleTitle": "Kiss It Better",
-          "appleArtistId": 63346553,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 7,
-          "sourceRank": 7,
-          "title": "Love On The Brain",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:5oO3drDxtziYU2H1X23ZIp",
-          "appleId": 1440925284,
-          "appleTitle": "Love on the Brain",
-          "appleArtistId": 63346553,
-          "appleCountry": "TW"
-        }
-      ],
-      "aliases": [
-        "Rihanna"
-      ],
-      "sourceUrl": "https://open.spotify.com/embed/artist/5pKCCKE2ajJHZ9KAiaK11H?locale=zh-TW",
-      "checkedAt": "2026-09-29"
-    },
-    {
-      "name": "Beyoncé",
-      "language": "english",
-      "targetCount": 7,
-      "songs": [
-        {
-          "rank": 1,
-          "sourceRank": 1,
-          "title": "Crazy In Love (feat. JAŸ-Z)",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:0TwBtDAWpkpM3srywFVOV5",
-          "appleId": 201274644,
-          "appleTitle": "Crazy in Love (feat. JAŸ-Z)",
-          "appleArtistId": 1419227,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 2,
-          "sourceRank": 2,
-          "title": "Halo",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:2CvOqDpQIMw69cCzWqr5yr",
-          "appleId": 332706961,
-          "appleTitle": "Halo",
-          "appleArtistId": 1419227,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 3,
-          "sourceRank": 3,
-          "title": "MORNING DEW (DONK)",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:058BagJYG30lHu8qrwRlo7",
-          "appleId": 6787303156,
-          "appleTitle": "MORNING DEW (DONK)",
-          "appleArtistId": 1419227,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 4,
-          "sourceRank": 4,
-          "title": "Irreplaceable",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:1G7DcLzPnopdZjLkev0K4e",
-          "appleId": 261707067,
-          "appleTitle": "Irreplaceable",
-          "appleArtistId": 1419227,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 5,
-          "sourceRank": 5,
-          "title": "Beautiful Liar",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:76Y07hjDi7fjJnZKsQbEaF",
-          "appleId": 261707058,
-          "appleTitle": "Beautiful Liar",
-          "appleArtistId": 889327,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 6,
-          "sourceRank": 6,
-          "title": "Sweet Dreams",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:2wNGoon7FlKnVEyYS1ZRBQ",
-          "appleId": 332706999,
-          "appleTitle": "Sweet Dreams",
-          "appleArtistId": 1419227,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 7,
-          "sourceRank": 7,
-          "title": "If I Were a Boy",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:1oQZk2bKBLgP1cbuFKvjkq",
-          "appleId": 332706963,
-          "appleTitle": "If I Were a Boy",
-          "appleArtistId": 1419227,
-          "appleCountry": "TW"
-        }
-      ],
-      "aliases": [
-        "Beyoncé"
-      ],
-      "sourceUrl": "https://open.spotify.com/embed/artist/6vWDO969PvNqNYHIOW5v0m?locale=zh-TW",
       "checkedAt": "2026-09-29"
     },
     {
@@ -9270,91 +8886,6 @@
       "checkedAt": "2026-09-29"
     },
     {
-      "name": "BTS",
-      "language": "korean",
-      "targetCount": 7,
-      "songs": [
-        {
-          "rank": 3,
-          "sourceRank": 3,
-          "title": "Body to Body",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:2rKkfc4VZ74FQDc1FF1Zo6",
-          "appleId": 1868481905,
-          "appleTitle": "Body to Body",
-          "appleArtistId": 883131348,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 4,
-          "sourceRank": 4,
-          "title": "Hooligan",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:20dAJsyno9ZoBLJtqgQnUI",
-          "appleId": 1868481906,
-          "appleTitle": "Hooligan",
-          "appleArtistId": 883131348,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 5,
-          "sourceRank": 5,
-          "title": "2.0",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:3bmpXHVie1GTy37OkXJ7Vc",
-          "appleId": 1868481914,
-          "appleTitle": "2.0",
-          "appleArtistId": 883131348,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 6,
-          "sourceRank": 6,
-          "title": "Come Over",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:6uvw8GFIqdqaJ4Nr3kN8Rs",
-          "appleId": 6777857413,
-          "appleTitle": "Come Over",
-          "appleArtistId": 883131348,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 7,
-          "sourceRank": 7,
-          "title": "they don’t know ’bout us",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:0b61A7v9agI08BG21jJPQ9",
-          "appleId": 1868482087,
-          "appleTitle": "they don’t know ’bout us",
-          "appleArtistId": 883131348,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 10,
-          "sourceRank": 10,
-          "title": "FYA",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:0KmrKOdScRDVYwWS8hkkdv",
-          "appleId": 1868481909,
-          "appleTitle": "FYA",
-          "appleArtistId": 883131348,
-          "appleCountry": "TW"
-        }
-      ],
-      "aliases": [
-        "BTS",
-        "防彈少年團"
-      ],
-      "sourceUrl": "https://open.spotify.com/embed/artist/3Nrfpe0tUJi4K4DXYWgMUX?locale=zh-TW",
-      "checkedAt": "2026-09-29"
-    },
-    {
       "name": "BLACKPINK",
       "language": "korean",
       "targetCount": 7,
@@ -9520,102 +9051,6 @@
         "TWICE"
       ],
       "sourceUrl": "https://open.spotify.com/embed/artist/7n2Ycct7Beij7Dj7meI4X0?locale=zh-TW",
-      "checkedAt": "2026-09-29"
-    },
-    {
-      "name": "Stray Kids",
-      "language": "korean",
-      "targetCount": 7,
-      "songs": [
-        {
-          "rank": 1,
-          "sourceRank": 1,
-          "title": "This & That",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:7AN7dJCtHqbL7f76QGyraa",
-          "appleId": 6781751957,
-          "appleTitle": "This & That",
-          "appleArtistId": 1304823362,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 2,
-          "sourceRank": 2,
-          "title": "RUN IT",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:2CGKPHslXh1Zy6JK2zu3Ud",
-          "appleId": 6776381901,
-          "appleTitle": "RUN IT",
-          "appleArtistId": 1304823362,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 3,
-          "sourceRank": 3,
-          "title": "Chk Chk Boom",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:09keT5ocFhEd5W5HidiUNq",
-          "appleId": 1752739619,
-          "appleTitle": "Chk Chk Boom",
-          "appleArtistId": 1304823362,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 4,
-          "sourceRank": 4,
-          "title": "After You",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:2jI7hP57YyY8GoJ5OQTkj7",
-          "appleId": 6781752175,
-          "appleTitle": "After You",
-          "appleArtistId": 1304823362,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 5,
-          "sourceRank": 5,
-          "title": "FARMING",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:3oCdoI8Y9OZqnCgcB06qb2",
-          "appleId": 6781752178,
-          "appleTitle": "FARMING",
-          "appleArtistId": 1304823362,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 6,
-          "sourceRank": 6,
-          "title": "Do It",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:1KuNhOubescxn3xD6WNI7Q",
-          "appleId": 1846266205,
-          "appleTitle": "Do It",
-          "appleArtistId": 1304823362,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 7,
-          "sourceRank": 7,
-          "title": "LALALALA",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:1OG1NoKpZZLrMqMYCk9m84",
-          "appleId": 1710644832,
-          "appleTitle": "LALALALA",
-          "appleArtistId": 1304823362,
-          "appleCountry": "TW"
-        }
-      ],
-      "aliases": [
-        "Stray Kids"
-      ],
-      "sourceUrl": "https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE?locale=zh-TW",
       "checkedAt": "2026-09-29"
     },
     {
@@ -10015,102 +9450,6 @@
       "checkedAt": "2026-09-29"
     },
     {
-      "name": "ENHYPEN",
-      "language": "korean",
-      "targetCount": 7,
-      "songs": [
-        {
-          "rank": 1,
-          "sourceRank": 1,
-          "title": "Bloody Paradise",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:5vlnF0r5xACeurZwjgn0Ij",
-          "appleId": 6802252063,
-          "appleTitle": "Bloody Paradise",
-          "appleArtistId": 1541011620,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 2,
-          "sourceRank": 2,
-          "title": "Bite Me",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:7mpdNiaQvygj2rHoxkzMfa",
-          "appleId": 1687303943,
-          "appleTitle": "Bite Me",
-          "appleArtistId": 1541011620,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 3,
-          "sourceRank": 3,
-          "title": "Bad For You",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:6mtOUelCiuBp6rYiXO8xsS",
-          "appleId": 6780548386,
-          "appleTitle": "Bad For You",
-          "appleArtistId": 1541011620,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 4,
-          "sourceRank": 4,
-          "title": "Drunk-Dazed",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:1wcr8DjnN59Awev8nnKpQ4",
-          "appleId": 1563302034,
-          "appleTitle": "Drunk-Dazed",
-          "appleArtistId": 1541011620,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 5,
-          "sourceRank": 5,
-          "title": "XO (Only If You Say Yes)",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:3RkSwrsIadAvqVtMp5yhaB",
-          "appleId": 1752178865,
-          "appleTitle": "XO (Only If You Say Yes)",
-          "appleArtistId": 1541011620,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 6,
-          "sourceRank": 6,
-          "title": "Stuck",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:3zjo48q28UqhpDaA3Ktism",
-          "appleId": 6780548052,
-          "appleTitle": "Stuck",
-          "appleArtistId": 1541011620,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 7,
-          "sourceRank": 7,
-          "title": "Two Fools",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:7KuUHd6NsvSHzr5wsReyKJ",
-          "appleId": 6780548050,
-          "appleTitle": "Two Fools",
-          "appleArtistId": 1541011620,
-          "appleCountry": "TW"
-        }
-      ],
-      "aliases": [
-        "ENHYPEN"
-      ],
-      "sourceUrl": "https://open.spotify.com/embed/artist/5t5FqBwTcgKTaWmfEbwQY9?locale=zh-TW",
-      "checkedAt": "2026-09-29"
-    },
-    {
       "name": "NewJeans",
       "language": "korean",
       "targetCount": 7,
@@ -10398,411 +9737,6 @@
         "BIGBANG"
       ],
       "sourceUrl": "https://open.spotify.com/embed/artist/4Kxlr1PRlDKEB0ekOCyHgX?locale=zh-TW",
-      "checkedAt": "2026-09-29"
-    },
-    {
-      "name": "EXO",
-      "language": "korean",
-      "targetCount": 7,
-      "songs": [
-        {
-          "rank": 1,
-          "sourceRank": 1,
-          "title": "宣告 (Love Shot)",
-          "titleAliases": [
-            "Love Shot"
-          ],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:0yB4jrSwN0bFtFRDR5vyMj",
-          "appleId": 1446231541,
-          "appleTitle": "Love Shot",
-          "appleArtistId": 657630070,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 2,
-          "sourceRank": 2,
-          "title": "咆哮 (Growl)",
-          "titleAliases": [
-            "Growl"
-          ],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:4pi0Elz7B7cLfw37J3bYm9",
-          "appleId": 854908245,
-          "appleTitle": "Growl",
-          "appleArtistId": 657630070,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 3,
-          "sourceRank": 3,
-          "title": "Monster",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:7GbUWl6qLW1gdngbEV2WDJ",
-          "appleId": 1121473193,
-          "appleTitle": "Monster",
-          "appleArtistId": 657630070,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 4,
-          "sourceRank": 4,
-          "title": "节奏 (Tempo)",
-          "titleAliases": [
-            "Tempo"
-          ],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:4EjUFjzi4ErWjklOA3Aslu",
-          "appleId": 1440782230,
-          "appleTitle": "Tempo",
-          "appleArtistId": 657630070,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 5,
-          "sourceRank": 5,
-          "title": "前夜",
-          "titleAliases": [
-            "The Eve"
-          ],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:2ujA6F1cpk3m8lsPE5aKua",
-          "appleId": 1260294769,
-          "appleTitle": "前夜",
-          "appleArtistId": 657630070,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 6,
-          "sourceRank": 6,
-          "title": "CALL ME BABY (叫我)",
-          "titleAliases": [
-            "CALL ME BABY"
-          ],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:6Rx0ORYPP3GH9rTvGS5Vy8",
-          "appleId": 979878876,
-          "appleTitle": "CALL ME BABY",
-          "appleArtistId": 657630070,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 7,
-          "sourceRank": 7,
-          "title": "LOVE ME RIGHT (漫游宇宙)",
-          "titleAliases": [
-            "LOVE ME RIGHT"
-          ],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:1kFevEv3s7Gf6o5xSDR5DL",
-          "appleId": 999674732,
-          "appleTitle": "LOVE ME RIGHT",
-          "appleArtistId": 657630070,
-          "appleCountry": "TW"
-        }
-      ],
-      "aliases": [
-        "EXO"
-      ],
-      "sourceUrl": "https://open.spotify.com/embed/artist/3cjEqqelV9zb4BYE3qDQ4O?locale=zh-TW",
-      "checkedAt": "2026-09-29"
-    },
-    {
-      "name": "少女時代",
-      "language": "korean",
-      "targetCount": 7,
-      "songs": [
-        {
-          "rank": 1,
-          "sourceRank": 1,
-          "title": "Gee",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:0t7kjpVLgOYITrSfFCoBEA",
-          "appleId": 854911644,
-          "appleTitle": "Gee",
-          "appleArtistId": 357463500,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 2,
-          "sourceRank": 2,
-          "title": "Genie",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:6kN3vvzDiVZP2hiPA0ApMd",
-          "appleId": 854915055,
-          "appleTitle": "Genie",
-          "appleArtistId": 357463500,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 3,
-          "sourceRank": 3,
-          "title": "The Boys",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:4dpyxuUzmrezIsA6zn4bx3",
-          "appleId": 1679266956,
-          "appleTitle": "The Boys",
-          "appleArtistId": 357463500,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 4,
-          "sourceRank": 4,
-          "title": "Into the New World",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:1RTW9UthqmZwr8Od6CH4i8",
-          "appleId": 854927955,
-          "appleTitle": "Into the New World",
-          "appleArtistId": 357463500,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 5,
-          "sourceRank": 5,
-          "title": "Oh!",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:6VOG2ROMCklbn6SSg9mA9H",
-          "appleId": 854890645,
-          "appleTitle": "Oh!",
-          "appleArtistId": 357463500,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 6,
-          "sourceRank": 6,
-          "title": "Run Devil Run",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:0U9jNoTJeTxXToakhsb7pV",
-          "appleId": 854890817,
-          "appleTitle": "Run Devil Run",
-          "appleArtistId": 357463500,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 7,
-          "sourceRank": 7,
-          "title": "Lion Heart",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:405SQUJdQut02dxtuQ0CZ3",
-          "appleId": 1031478989,
-          "appleTitle": "Lion Heart",
-          "appleArtistId": 357463500,
-          "appleCountry": "TW"
-        }
-      ],
-      "aliases": [
-        "少女時代",
-        "Girls' Generation",
-        "Girls’ Generation"
-      ],
-      "sourceUrl": "https://open.spotify.com/embed/artist/0Sadg1vgvaPqGTOjxu0N6c?locale=zh-TW",
-      "checkedAt": "2026-09-29"
-    },
-    {
-      "name": "Super Junior",
-      "language": "korean",
-      "targetCount": 7,
-      "songs": [
-        {
-          "rank": 1,
-          "sourceRank": 1,
-          "title": "쏘리 쏘리 Sorry, Sorry",
-          "titleAliases": [
-            "Sorry, Sorry"
-          ],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:5w18nowVMRZrC5Na9Vxoth",
-          "appleId": 854890251,
-          "appleTitle": "Sorry, Sorry",
-          "appleArtistId": 284066214,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 2,
-          "sourceRank": 2,
-          "title": "Mr. Simple",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:6QTBYKLlV2PQniwAWrBV2z",
-          "appleId": 854896138,
-          "appleTitle": "Mr. Simple",
-          "appleArtistId": 284066214,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 3,
-          "sourceRank": 3,
-          "title": "미인아 Bonamana",
-          "titleAliases": [
-            "Bonamana"
-          ],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:2cRTwcRq1idIR9NrcYKb63",
-          "appleId": 854891187,
-          "appleTitle": "Bonamana",
-          "appleArtistId": 284066214,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 4,
-          "sourceRank": 4,
-          "title": "Express Mode",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:1fDGN1BOe1eMgofgO6qxm0",
-          "appleId": 1822933222,
-          "appleTitle": "Express Mode",
-          "appleArtistId": 284066214,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 6,
-          "sourceRank": 6,
-          "title": "Devil",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:3IQ9FJ2cMVQtger5ZhgCaj",
-          "appleId": 1019135257,
-          "appleTitle": "Devil",
-          "appleArtistId": 284066214,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 7,
-          "sourceRank": 7,
-          "title": "Mamacita (아야야)",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:23z7nLq4CD83EyzeeIokkt",
-          "appleId": 913480691,
-          "appleTitle": "Mamacita",
-          "appleArtistId": 284066214,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 8,
-          "sourceRank": 8,
-          "title": "너 같은 사람 또 없어 No Other",
-          "titleAliases": [
-            "No Other"
-          ],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:6lTB8MISIFcEI4Rspwn4LV",
-          "appleId": 854891189,
-          "appleTitle": "No Other",
-          "appleArtistId": 284066214,
-          "appleCountry": "TW"
-        }
-      ],
-      "aliases": [
-        "Super Junior",
-        "SUPER JUNIOR"
-      ],
-      "sourceUrl": "https://open.spotify.com/embed/artist/6gzXCdfYfFe5XKhPKkYqxV?locale=zh-TW",
-      "checkedAt": "2026-09-29"
-    },
-    {
-      "name": "2NE1",
-      "language": "korean",
-      "targetCount": 7,
-      "songs": [
-        {
-          "rank": 1,
-          "sourceRank": 1,
-          "title": "I AM THE BEST",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:6aRr7IN6X7D7KbpWrafNtf",
-          "appleId": 1445168940,
-          "appleTitle": "I Am the Best",
-          "appleArtistId": 329155759,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 2,
-          "sourceRank": 2,
-          "title": "Fire",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:2EwOnaGCrPjbmyZlt76NN4",
-          "appleId": 1339060468,
-          "appleTitle": "Fire",
-          "appleArtistId": 329155759,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 3,
-          "sourceRank": 3,
-          "title": "I Don't Care",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:1ErdaM9N7EJ7trhXFnDECg",
-          "appleId": 1339060469,
-          "appleTitle": "I Don't Care",
-          "appleArtistId": 329155759,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 4,
-          "sourceRank": 4,
-          "title": "COME BACK HOME",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:63J1RStsmoVKXNTCHRNxii",
-          "appleId": 1317765128,
-          "appleTitle": "Come Back Home",
-          "appleArtistId": 329155759,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 5,
-          "sourceRank": 5,
-          "title": "You and I (Park Bom)",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:14Pn9Vd2GKwQrVYADgCZ5l",
-          "appleId": 502791539,
-          "appleTitle": "YOU AND I - BOM (from 2NE1) “NOLZA in Japan” Ver.",
-          "appleArtistId": 329155759,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 6,
-          "sourceRank": 6,
-          "title": "LONELY",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:11w8cBXQzIhvHi1BHu0kKK",
-          "appleId": 1338689929,
-          "appleTitle": "Lonely",
-          "appleArtistId": 329155759,
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 7,
-          "sourceRank": 7,
-          "title": "Lollipop",
-          "titleAliases": [],
-          "selectionType": "spotify-top",
-          "spotifyTrack": "spotify:track:2eDGx6nbrznlTmf6YMjrRi",
-          "appleId": 1339060475,
-          "appleTitle": "Lollipop",
-          "appleArtistId": 329155759,
-          "appleCountry": "TW"
-        }
-      ],
-      "aliases": [
-        "2NE1"
-      ],
-      "sourceUrl": "https://open.spotify.com/embed/artist/1l0mKo96Jh9HVYONcRl3Yp?locale=zh-TW",
       "checkedAt": "2026-09-29"
     },
     {
@@ -13116,6 +12050,805 @@
           "appleId": 1743054994,
           "appleArtistId": 1450554836,
           "appleTitle": "Close To You",
+          "appleCountry": "TW"
+        }
+      ]
+    },
+    {
+      "name": "ITZY",
+      "aliases": [
+        "ITZY",
+        "ITZY"
+      ],
+      "language": "korean",
+      "targetCount": 7,
+      "sourceUrl": "https://open.spotify.com/embed/artist/2KC9Qb60EaY0kW4eH68vr3?locale=zh-TW",
+      "checkedAt": "2026-10-02",
+      "songs": [
+        {
+          "rank": 1,
+          "sourceRank": 1,
+          "title": "THAT’S A NO NO",
+          "spotifyTrack": "spotify:track:0q1NTsO5b93R97JdQxtFGx",
+          "selectionType": "spotify-top",
+          "appleId": 1608253231,
+          "appleArtistId": 1451964345,
+          "appleTitle": "THAT'S A NO NO",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 2,
+          "sourceRank": 2,
+          "title": "WANNABE",
+          "spotifyTrack": "spotify:track:4pspYVQGFHLPEFgQPD1J7e",
+          "selectionType": "spotify-top",
+          "appleId": 1608253214,
+          "appleArtistId": 1451964345,
+          "appleTitle": "WANNABE",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 3,
+          "sourceRank": 3,
+          "title": "Motto",
+          "spotifyTrack": "spotify:track:3H82Jpo0SI3UvWP6Ol8mWn",
+          "selectionType": "spotify-top",
+          "appleId": 1893520812,
+          "appleArtistId": 1451964345,
+          "appleTitle": "Motto",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 4,
+          "sourceRank": 4,
+          "title": "LOCO",
+          "spotifyTrack": "spotify:track:56Yxkm62GtEpnPyG7TvwLY",
+          "selectionType": "spotify-top",
+          "appleId": 1608111698,
+          "appleArtistId": 1451964345,
+          "appleTitle": "LOCO",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 5,
+          "sourceRank": 5,
+          "title": "DALLA DALLA",
+          "spotifyTrack": "spotify:track:38rUIlTX93Aoif3WcY1wv6",
+          "selectionType": "spotify-top",
+          "appleId": 1608248898,
+          "appleArtistId": 1451964345,
+          "appleTitle": "DALLA DALLA",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 7,
+          "sourceRank": 7,
+          "title": "Imaginary Friend",
+          "spotifyTrack": "spotify:track:06BeeZaS4YArThfTMu80QS",
+          "selectionType": "spotify-top",
+          "appleId": 1770573530,
+          "appleArtistId": 1451964345,
+          "appleTitle": "Imaginary Friend",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 8,
+          "sourceRank": 8,
+          "title": "TUNNEL VISION",
+          "spotifyTrack": "spotify:track:5xCiLM4z1C40vHKM9r2xJ1",
+          "selectionType": "spotify-top",
+          "appleId": 1846236586,
+          "appleArtistId": 1451964345,
+          "appleTitle": "TUNNEL VISION",
+          "appleCountry": "TW"
+        }
+      ]
+    },
+    {
+      "name": "NMIXX",
+      "aliases": [
+        "NMIXX",
+        "NMIXX"
+      ],
+      "language": "korean",
+      "targetCount": 7,
+      "sourceUrl": "https://open.spotify.com/embed/artist/28ot3wh4oNmoFOdVajibBl?locale=zh-TW",
+      "checkedAt": "2026-10-02",
+      "songs": [
+        {
+          "rank": 1,
+          "sourceRank": 1,
+          "title": "Heavy Serenade",
+          "spotifyTrack": "spotify:track:1404zSB6dqMIiStHLI7gg4",
+          "selectionType": "spotify-top",
+          "appleId": 1892154309,
+          "appleArtistId": 1600411676,
+          "appleTitle": "Heavy Serenade",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 2,
+          "sourceRank": 2,
+          "title": "Blue Valentine",
+          "spotifyTrack": "spotify:track:4i0HNuFEH6P6K4UnsY5uUh",
+          "selectionType": "spotify-top",
+          "appleId": 1839523842,
+          "appleArtistId": 1600411676,
+          "appleTitle": "Blue Valentine",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 3,
+          "sourceRank": 3,
+          "title": "LOUD",
+          "spotifyTrack": "spotify:track:5rGrtds032AS35wDDyTNN4",
+          "selectionType": "spotify-top",
+          "appleId": 1892154319,
+          "appleArtistId": 1600411676,
+          "appleTitle": "LOUD",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 4,
+          "sourceRank": 4,
+          "title": "DICE",
+          "spotifyTrack": "spotify:track:5aaE27JUylnG7aPtGJPrrC",
+          "selectionType": "spotify-top",
+          "appleId": 1688803369,
+          "appleArtistId": 1600411676,
+          "appleTitle": "DICE",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 5,
+          "sourceRank": 5,
+          "title": "Love Me Like This",
+          "spotifyTrack": "spotify:track:6P3CtlzTKLxcNYGOS3es8m",
+          "selectionType": "spotify-top",
+          "appleId": 1689309607,
+          "appleArtistId": 1600411676,
+          "appleTitle": "Love Me Like This",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 6,
+          "sourceRank": 6,
+          "title": "Crescendo",
+          "spotifyTrack": "spotify:track:6U5iImIuGm6HuNJWhEdjYq",
+          "selectionType": "spotify-top",
+          "appleId": 1892154306,
+          "appleArtistId": 1600411676,
+          "appleTitle": "Crescendo",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 7,
+          "sourceRank": 7,
+          "title": "KNOW ABOUT ME",
+          "spotifyTrack": "spotify:track:5yfhzEct1ulyU6g5oVRraj",
+          "selectionType": "spotify-top",
+          "appleId": 1799674117,
+          "appleArtistId": 1600411676,
+          "appleTitle": "KNOW ABOUT ME",
+          "appleCountry": "TW"
+        }
+      ]
+    },
+    {
+      "name": "BABYMONSTER",
+      "aliases": [
+        "BABYMONSTER",
+        "BABYMONSTER"
+      ],
+      "language": "korean",
+      "targetCount": 7,
+      "sourceUrl": "https://open.spotify.com/embed/artist/1SIocsqdEefUTE6XKGUiVS?locale=zh-TW",
+      "checkedAt": "2026-10-02",
+      "songs": [
+        {
+          "rank": 1,
+          "sourceRank": 1,
+          "title": "CHOOM",
+          "spotifyTrack": "spotify:track:4cox7ONwuCwUvfZ9fsGDVu",
+          "selectionType": "spotify-top",
+          "appleId": 6763988598,
+          "appleArtistId": 1715981813,
+          "appleTitle": "CHOOM",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 2,
+          "sourceRank": 2,
+          "title": "DRIP",
+          "spotifyTrack": "spotify:track:198zDKzyktXRG1PGpidY9h",
+          "selectionType": "spotify-top",
+          "appleId": 1773262055,
+          "appleArtistId": 1715981813,
+          "appleTitle": "DRIP",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 4,
+          "sourceRank": 4,
+          "title": "SHEESH",
+          "spotifyTrack": "spotify:track:1njlnn8ZKHI77Pe9szIONR",
+          "selectionType": "spotify-top",
+          "appleId": 1737962890,
+          "appleArtistId": 1715981813,
+          "appleTitle": "SHEESH",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 5,
+          "sourceRank": 5,
+          "title": "PSYCHO",
+          "spotifyTrack": "spotify:track:7jp2VW62Yt2bDOaRas3hR6",
+          "selectionType": "spotify-top",
+          "appleId": 1843248274,
+          "appleArtistId": 1715981813,
+          "appleTitle": "PSYCHO",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 6,
+          "sourceRank": 6,
+          "title": "WE GO UP",
+          "spotifyTrack": "spotify:track:49DTiFx70EuJLV7hDsCo6z",
+          "selectionType": "spotify-top",
+          "appleId": 1843247941,
+          "appleArtistId": 1715981813,
+          "appleTitle": "WE GO UP",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 7,
+          "sourceRank": 7,
+          "title": "MOON",
+          "spotifyTrack": "spotify:track:4ni36cZOQZldZGpHyLHFqX",
+          "selectionType": "spotify-top",
+          "appleId": 6763988597,
+          "appleArtistId": 1715981813,
+          "appleTitle": "MOON",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 8,
+          "sourceRank": 8,
+          "title": "FOREVER",
+          "spotifyTrack": "spotify:track:6b6KXDbDn0s0Jepxm8a3nr",
+          "selectionType": "spotify-top",
+          "appleId": 1753210716,
+          "appleArtistId": 1715981813,
+          "appleTitle": "FOREVER",
+          "appleCountry": "TW"
+        }
+      ]
+    },
+    {
+      "name": "DAY6",
+      "aliases": [
+        "DAY6",
+        "DAY6"
+      ],
+      "language": "korean",
+      "targetCount": 7,
+      "sourceUrl": "https://open.spotify.com/embed/artist/5TnQc2N1iKlFjYD7CPGvFc?locale=zh-TW",
+      "checkedAt": "2026-10-02",
+      "songs": [
+        {
+          "rank": 1,
+          "sourceRank": 1,
+          "title": "You Were Beautiful",
+          "spotifyTrack": "spotify:track:3FR2yqZsG07NhXz7uPyUyC",
+          "selectionType": "spotify-top",
+          "appleId": 1689198306,
+          "appleArtistId": 1037939997,
+          "appleTitle": "You Were Beautiful",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 2,
+          "sourceRank": 2,
+          "title": "HAPPY",
+          "spotifyTrack": "spotify:track:1k68vKHNQXU5CHqcM7Yp7N",
+          "selectionType": "spotify-top",
+          "appleId": 1732319018,
+          "appleArtistId": 1037939997,
+          "appleTitle": "HAPPY",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 4,
+          "sourceRank": 4,
+          "title": "Congratulations",
+          "spotifyTrack": "spotify:track:13z3GfR6WzmLUDxBHO3amM",
+          "selectionType": "spotify-top",
+          "appleId": 1689197737,
+          "appleArtistId": 1037939997,
+          "appleTitle": "Congratulations",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 5,
+          "sourceRank": 5,
+          "title": "Love me or Leave me",
+          "spotifyTrack": "spotify:track:4srbKZGPFWK1rqVFS9KDFR",
+          "selectionType": "spotify-top",
+          "appleId": 1689326251,
+          "appleArtistId": 1037939997,
+          "appleTitle": "Love me or Leave me",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 6,
+          "sourceRank": 6,
+          "title": "Welcome to the Show",
+          "spotifyTrack": "spotify:track:6je5cTal6PyeITNrOzkCoS",
+          "selectionType": "spotify-top",
+          "appleId": 1732319011,
+          "appleArtistId": 1037939997,
+          "appleTitle": "Welcome to the Show",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 7,
+          "sourceRank": 7,
+          "title": "Shoot Me",
+          "spotifyTrack": "spotify:track:5XZ4yL24BLKkysf4muf4yQ",
+          "selectionType": "spotify-top",
+          "appleId": 1689325369,
+          "appleArtistId": 1037939997,
+          "appleTitle": "Shoot Me",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 8,
+          "sourceRank": 8,
+          "title": "Zombie",
+          "spotifyTrack": "spotify:track:0vPLEyGAlxDAMxFvnwHgUB",
+          "selectionType": "spotify-top",
+          "appleId": 1689326248,
+          "appleArtistId": 1037939997,
+          "appleTitle": "Zombie",
+          "appleCountry": "TW"
+        }
+      ]
+    },
+    {
+      "name": "曾沛慈",
+      "aliases": [
+        "曾沛慈",
+        "曾沛慈"
+      ],
+      "language": "mandarin",
+      "targetCount": 7,
+      "sourceUrl": "https://open.spotify.com/embed/artist/1he19XnDUahODrmRwKlC8w?locale=zh-TW",
+      "checkedAt": "2026-10-02",
+      "songs": [
+        {
+          "rank": 1,
+          "sourceRank": 1,
+          "title": "一個人想著一個人",
+          "spotifyTrack": "spotify:track:3n3zzFH7zzO0gJNaw4RKSm",
+          "selectionType": "spotify-top",
+          "appleId": 597217626,
+          "appleArtistId": 596933364,
+          "appleTitle": "一個人想著一個人",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 2,
+          "sourceRank": 2,
+          "title": "數到十",
+          "spotifyTrack": "spotify:track:6RN4rGtDTTx9orufM72pC4",
+          "selectionType": "spotify-top",
+          "appleId": 1811950828,
+          "appleArtistId": 596933364,
+          "appleTitle": "數到十",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 3,
+          "sourceRank": 3,
+          "title": "愛情怎麼喊停",
+          "spotifyTrack": "spotify:track:2VBgt3YVz79WjOS1IdvPWl",
+          "selectionType": "spotify-top",
+          "appleId": 655423818,
+          "appleArtistId": 596933364,
+          "appleTitle": "愛情怎麼喊停",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 4,
+          "sourceRank": 4,
+          "title": "說分手的人也會難過 - 影集《接招吧！製作人》單元曲",
+          "spotifyTrack": "spotify:track:5DHfXnAmGzJAbZt6OHQvb4",
+          "selectionType": "spotify-top",
+          "appleId": 6808595909,
+          "appleArtistId": 596933364,
+          "appleTitle": "說分手的人也會難過",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 5,
+          "sourceRank": 5,
+          "title": "不過失去了一點點 - 八大《終極惡女》片尾曲",
+          "spotifyTrack": "spotify:track:6HEfgS0ALir73Un4XKtYI6",
+          "selectionType": "spotify-top",
+          "appleId": 948585178,
+          "appleArtistId": 596933364,
+          "appleTitle": "不過失去了一點點",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 6,
+          "sourceRank": 6,
+          "title": "夠愛",
+          "spotifyTrack": "spotify:track:47rK8X3g7U4rkesGoImcWs",
+          "selectionType": "spotify-top",
+          "appleId": 1108541728,
+          "appleArtistId": 596933364,
+          "appleTitle": "夠愛",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 7,
+          "sourceRank": 7,
+          "title": "After Everything - HBO原創影集《來！金來號！》插曲",
+          "spotifyTrack": "spotify:track:3A0HzxcqgA37hiMo4qiVlS",
+          "selectionType": "spotify-top",
+          "appleId": 6809728577,
+          "appleArtistId": 596933364,
+          "appleTitle": "After Everything (HBO原創影集《來!金來號!》插曲)",
+          "appleCountry": "TW"
+        }
+      ]
+    },
+    {
+      "name": "Green Day",
+      "aliases": [
+        "Green Day",
+        "Green Day"
+      ],
+      "language": "english",
+      "targetCount": 7,
+      "sourceUrl": "https://open.spotify.com/embed/artist/7oPftvlwr6VrsViSDV7fJY?locale=zh-TW",
+      "checkedAt": "2026-10-02",
+      "songs": [
+        {
+          "rank": 2,
+          "sourceRank": 2,
+          "title": "Basket Case",
+          "spotifyTrack": "spotify:track:6L89mwZXSOwYl76YXfX13s",
+          "selectionType": "spotify-top",
+          "appleId": 1160082180,
+          "appleArtistId": 954266,
+          "appleTitle": "Basket Case",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 4,
+          "sourceRank": 4,
+          "title": "Wake Me Up When September Ends",
+          "spotifyTrack": "spotify:track:5pugSJ7chgFcXiUBgrZSYd",
+          "selectionType": "spotify-top",
+          "appleId": 207192838,
+          "appleArtistId": 954266,
+          "appleTitle": "Wake Me Up When September Ends",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 6,
+          "sourceRank": 6,
+          "title": "Holiday",
+          "spotifyTrack": "spotify:track:0lvhEsN1zkMzfp2M1o17yy",
+          "selectionType": "spotify-top",
+          "appleId": 1161539473,
+          "appleArtistId": 954266,
+          "appleTitle": "Holiday",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 8,
+          "sourceRank": 8,
+          "title": "21 Guns",
+          "spotifyTrack": "spotify:track:64yrDBpcdwEdNY9loyEGbX",
+          "selectionType": "spotify-top",
+          "appleId": 315611467,
+          "appleArtistId": 954266,
+          "appleTitle": "21 Guns",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 9,
+          "sourceRank": 9,
+          "title": "When I Come Around",
+          "spotifyTrack": "spotify:track:1Dr1fXbc2IxaK1Mu8P8Khz",
+          "selectionType": "spotify-top",
+          "appleId": 1160082350,
+          "appleArtistId": 954266,
+          "appleTitle": "When I Come Around",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 10,
+          "sourceRank": 10,
+          "title": "Last Night on Earth",
+          "spotifyTrack": "spotify:track:5TpPSTItCwtZ8Sltr3vdzm",
+          "selectionType": "spotify-top",
+          "appleId": 1156539437,
+          "appleArtistId": 954266,
+          "appleTitle": "Last Night On Earth",
+          "appleCountry": "TW"
+        }
+      ]
+    },
+    {
+      "name": "Anne-Marie",
+      "aliases": [
+        "Anne-Marie",
+        "Anne-Marie"
+      ],
+      "language": "english",
+      "targetCount": 7,
+      "sourceUrl": "https://open.spotify.com/embed/artist/1zNqDE7qDGCsyzJwohVaoX?locale=zh-TW",
+      "checkedAt": "2026-10-02",
+      "songs": [
+        {
+          "rank": 1,
+          "sourceRank": 1,
+          "title": "Rockabye (feat. Sean Paul & Anne-Marie)",
+          "spotifyTrack": "spotify:track:2hrUO4drrO63i7FYbCLBl2",
+          "selectionType": "spotify-top",
+          "appleId": 1164046335,
+          "appleArtistId": 463049461,
+          "appleTitle": "Rockabye (feat. Sean Paul & Anne-Marie)",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 2,
+          "sourceRank": 2,
+          "title": "2002",
+          "spotifyTrack": "spotify:track:2BgEsaKNfHUdlh97KmvFyo",
+          "selectionType": "spotify-top",
+          "appleId": 1418704730,
+          "appleArtistId": 474724108,
+          "appleTitle": "2002",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 3,
+          "sourceRank": 3,
+          "title": "Rewrite The Stars (with James Arthur & Anne-Marie)",
+          "spotifyTrack": "spotify:track:6mQLN3zRtAp6ovjusyYKrV",
+          "selectionType": "spotify-top",
+          "appleId": 1439343414,
+          "appleArtistId": 193502798,
+          "appleTitle": "Rewrite the Stars",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 5,
+          "sourceRank": 5,
+          "title": "Baby Don't Hurt Me",
+          "spotifyTrack": "spotify:track:3BKD1PwArikchz2Zrlp1qi",
+          "selectionType": "spotify-top",
+          "appleId": 1679958206,
+          "appleArtistId": 5557599,
+          "appleTitle": "Baby Don't Hurt Me",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 7,
+          "sourceRank": 7,
+          "title": "Alarm",
+          "spotifyTrack": "spotify:track:572xshmOviSGH70oPYMCZV",
+          "selectionType": "spotify-top",
+          "appleId": 1168599243,
+          "appleArtistId": 474724108,
+          "appleTitle": "Alarm",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 8,
+          "sourceRank": 8,
+          "title": "UNHEALTHY (feat. Shania Twain)",
+          "spotifyTrack": "spotify:track:2Z5EUCXngeoYD7wmJBcJv1",
+          "selectionType": "spotify-top",
+          "appleId": 1683994643,
+          "appleArtistId": 474724108,
+          "appleTitle": "UNHEALTHY (feat. Shania Twain)",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 10,
+          "sourceRank": 10,
+          "title": "Our Song",
+          "spotifyTrack": "spotify:track:3fGW43fnu3OHEw6ohTC2Bw",
+          "selectionType": "spotify-top",
+          "appleId": 1566144680,
+          "appleArtistId": 474724108,
+          "appleTitle": "Our Song",
+          "appleCountry": "TW"
+        }
+      ]
+    },
+    {
+      "name": "Hayd",
+      "aliases": [
+        "Hayd",
+        "Hayd"
+      ],
+      "language": "english",
+      "targetCount": 7,
+      "sourceUrl": "https://open.spotify.com/embed/artist/1adGvsK8A0XG2D18ufk7fZ?locale=zh-TW",
+      "checkedAt": "2026-10-02",
+      "songs": [
+        {
+          "rank": 1,
+          "sourceRank": 1,
+          "title": "How Long, How Low?",
+          "spotifyTrack": "spotify:track:7IGOMg3KwOqHAvvUAPXE7B",
+          "selectionType": "spotify-top",
+          "appleId": 1810695264,
+          "appleArtistId": 1042737143,
+          "appleTitle": "How Long, How Low?",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 2,
+          "sourceRank": 2,
+          "title": "Head In The Clouds",
+          "spotifyTrack": "spotify:track:3CeKc83EsgRPItgvlDHo5B",
+          "selectionType": "spotify-top",
+          "appleId": 1583125951,
+          "appleArtistId": 1409800302,
+          "appleTitle": "Head In The Clouds",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 3,
+          "sourceRank": 3,
+          "title": "Changes",
+          "spotifyTrack": "spotify:track:7KhzNtBj6hmB08fyJCIRb3",
+          "selectionType": "spotify-top",
+          "appleId": 1583126078,
+          "appleArtistId": 1409800302,
+          "appleTitle": "Changes",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 4,
+          "sourceRank": 4,
+          "title": "Closure",
+          "spotifyTrack": "spotify:track:3pt2acuxLXvIGproniPoq9",
+          "selectionType": "spotify-top",
+          "appleId": 1583125948,
+          "appleArtistId": 1409800302,
+          "appleTitle": "Closure",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 5,
+          "sourceRank": 5,
+          "title": "Superhero",
+          "spotifyTrack": "spotify:track:1ICipKQ1gaCC0bRScvRW8h",
+          "selectionType": "spotify-top",
+          "appleId": 1663960780,
+          "appleArtistId": 1409800302,
+          "appleTitle": "Superhero",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 6,
+          "sourceRank": 6,
+          "title": "Suffocate",
+          "spotifyTrack": "spotify:track:0lJXxzwTREB6JI8KYHdE1X",
+          "selectionType": "spotify-top",
+          "appleId": 1659489163,
+          "appleArtistId": 1409800302,
+          "appleTitle": "Suffocate",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 7,
+          "sourceRank": 7,
+          "title": "All of the Stars",
+          "spotifyTrack": "spotify:track:3ssTtSdEIKuuTC8BV1OaTg",
+          "selectionType": "spotify-top",
+          "appleId": 1728377786,
+          "appleArtistId": 1409800302,
+          "appleTitle": "All of the Stars",
+          "appleCountry": "TW"
+        }
+      ]
+    },
+    {
+      "name": "ILLIT",
+      "aliases": [
+        "ILLIT",
+        "ILLIT"
+      ],
+      "language": "korean",
+      "targetCount": 7,
+      "sourceUrl": "https://open.spotify.com/embed/artist/36cgvBn0aadzOijnjjwqMN?locale=zh-TW",
+      "checkedAt": "2026-10-02",
+      "songs": [
+        {
+          "rank": 2,
+          "sourceRank": 2,
+          "title": "It's Me",
+          "spotifyTrack": "spotify:track:1D5L58KLBbceOynTP4DQnY",
+          "selectionType": "spotify-top",
+          "appleId": 1887194026,
+          "appleArtistId": 1734551937,
+          "appleTitle": "It's Me",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 3,
+          "sourceRank": 3,
+          "title": "Magnetic",
+          "spotifyTrack": "spotify:track:1aKvZDoLGkNMxoRYgkckZG",
+          "selectionType": "spotify-top",
+          "appleId": 1734500896,
+          "appleArtistId": 1734551937,
+          "appleTitle": "Magnetic",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 4,
+          "sourceRank": 4,
+          "title": "NOT CUTE ANYMORE",
+          "spotifyTrack": "spotify:track:1k0JAiH11gHL9dc5dfQjQr",
+          "selectionType": "spotify-top",
+          "appleId": 1849105517,
+          "appleArtistId": 1734551937,
+          "appleTitle": "NOT CUTE ANYMORE",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 5,
+          "sourceRank": 5,
+          "title": "Billyeoon Goyangi (Do the Dance)",
+          "spotifyTrack": "spotify:track:4p0uVFAXKUISu8yp9gNtWE",
+          "selectionType": "spotify-top",
+          "appleId": 1817427565,
+          "appleArtistId": 1734551937,
+          "appleTitle": "Billyeoon Goyangi (Do the Dance)",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 6,
+          "sourceRank": 6,
+          "title": "jellyous",
+          "spotifyTrack": "spotify:track:51pREVFJeAJGvhJ1rYCKZH",
+          "selectionType": "spotify-top",
+          "appleId": 1817427697,
+          "appleArtistId": 1734551937,
+          "appleTitle": "jellyous",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 7,
+          "sourceRank": 7,
+          "title": "Tick-Tack",
+          "spotifyTrack": "spotify:track:0znsc67nMhP4X9hjhvoyeP",
+          "selectionType": "spotify-top",
+          "appleId": 1772790106,
+          "appleArtistId": 1734551937,
+          "appleTitle": "Tick-Tack",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 8,
+          "sourceRank": 8,
+          "title": "Cherish (My Love)",
+          "spotifyTrack": "spotify:track:21LtZQQMQYwVIxc9O9Ygq8",
+          "selectionType": "spotify-top",
+          "appleId": 1772790089,
+          "appleArtistId": 1734551937,
+          "appleTitle": "Cherish (My Love)",
           "appleCountry": "TW"
         }
       ]

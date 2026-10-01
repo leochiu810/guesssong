@@ -20,7 +20,7 @@ export function createRankedUI({root,client,onExit,onBoard,getVolume,onVolume}){
   stop();root.replaceChildren();
   if(phase==='result'){
    const passed=state.stageScore>=thresholds[state.level];
-   root.append(el('h2',`第 ${state.level+1} 關${passed?'通過':'挑戰失敗'}`),el('p',`本關 ${state.stageScore} / 1,000 分`,'ranked-score'),el('p',`本次挑戰：第 ${state.level+1} 關 · 最高得分 ${state.stageScore} 分`));
+   root.append(el('h2',`第 ${state.level+1} 關${passed?'通過':'挑戰失敗'}`),el('p',`本關 ${state.stageScore} / 1,000 分`,'ranked-score'),el('p',`本次挑戰：第 ${state.level+1} 關 · 最高得分 ${state.stageScore} 分 · 總得分 ${state.total} 分`));
    const saving=el('p','正在儲存成績…','fine'),token=epoch;
    const retry=button('重試儲存',save,'text-button');retry.hidden=true;root.append(saving,retry);
    async function save(){retry.hidden=true;saving.textContent='正在儲存成績…';try{await client.save();if(token!==epoch)return;saving.textContent='成績已送達，排行榜會保留你的最佳紀錄。';}catch(error){if(token!==epoch)return;saving.textContent='成績尚未儲存：'+error.message+' 請在離開或開始下一關前重試。';retry.hidden=false;}}
@@ -44,7 +44,8 @@ export function createRankedUI({root,client,onExit,onBoard,getVolume,onVolume}){
    audio??=new Audio();audio.volume=getVolume();audio.muted=getVolume()===0;audio.src=state.question.previewUrl;
    audio.onplaying=()=>status.textContent='';audio.onended=()=>status.textContent='試聽已結束，請作答。';audio.onerror=()=>fail('Apple 試聽載入失敗，本關不列入排名。請確認網路後重新挑戰。');play(status,unlock);
   }else{
-   const points=el('p',undefined,'question-score');points.append(el('span','本題'),el('strong',String(state.question.result.points)),el('span','分'));root.append(points,el('p',state.question.answer.title));
+   const answer=state.question.answer;
+   const points=el('p',undefined,'question-score');points.append(el('span','本題'),el('strong',String(state.question.result.points)),el('span','分'));root.append(points,el('p',answer.title),el('p',answer.artist+(answer.selectionNote?` · ${answer.selectionNote}`:''),'answer-artist'));
    const token=epoch;advance=setTimeout(()=>{if(token!==epoch)return;if(finalReveal)render();else send('next');},finalReveal?2000:2800);
   }
   const source=el('div',undefined,'source');source.append(el('span','試聽 provided courtesy of iTunes'));if(phase==='reveal'){const link=el('a','在 Apple 查看本題歌曲 ↗');link.href=state.question.answer.storeUrl;link.target='_blank';link.rel='noopener noreferrer';source.append(link);}root.append(source);
@@ -60,9 +61,9 @@ export function bestByNickname(rows){
 }
 export function renderBoard(root,rows){
  root.replaceChildren();const entries=bestByNickname(rows);
- const table=el('table');table.className='ranking-table';table.setAttribute('aria-label','排行榜成績');const head=el('thead'),heading=el('tr');for(const title of ['名次','暱稱','關卡','最高得分']){const th=el('th',title);th.scope='col';heading.append(th);}head.append(heading);table.append(head);
- const body=el('tbody');entries.forEach((row,i)=>{const tr=el('tr');for(const value of [i+1,row.nickname,row.passed+' / 5',row.total])tr.append(el('td',String(value)));body.append(tr);});
- if(!entries.length){const tr=el('tr'),td=el('td','尚無成績，來挑戰第一筆紀錄！','ranking-empty');td.colSpan=4;tr.append(td);body.append(tr);}
+ const table=el('table');table.className='ranking-table';table.setAttribute('aria-label','排行榜成績');const head=el('thead'),heading=el('tr');for(const title of ['名次','暱稱','關卡','最高得分','總得分']){const th=el('th',title);th.scope='col';heading.append(th);}head.append(heading);table.append(head);
+ const body=el('tbody');entries.forEach((row,i)=>{const tr=el('tr');for(const value of [i+1,row.nickname,row.passed+' / 5',row.total,row.cumulative??'—'])tr.append(el('td',String(value)));body.append(tr);});
+ if(!entries.length){const tr=el('tr'),td=el('td','尚無成績，來挑戰第一筆紀錄！','ranking-empty');td.colSpan=5;tr.append(td);body.append(tr);}
  table.append(body);const frame=el('div',undefined,'ranking-table-frame');frame.append(table);root.append(frame);
 }
 

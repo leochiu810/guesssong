@@ -1,4 +1,4 @@
-import {rankingConfig} from './ranking-config.js?v=0.7.2';
+import {rankingConfig} from './ranking-config.js?v=0.8.1';
 export function rankingConfigured(config=rankingConfig){return /^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/i.test(config.url)&&!!config.publishableKey;}
 export class RankingClient {
  constructor(config=rankingConfig,storage){if(storage===undefined){try{storage=globalThis.localStorage;}catch{storage=null;}}this.config=config;this.storage=storage;this.session=null;this.key='guess-song-player:'+config.url;}
@@ -16,8 +16,8 @@ export class RankingClient {
   return data.access_token;
  }
 
- async submit({nickname,passed,total}){
-  const token=await this.authenticate();return this.request('/functions/v1/ranked-game',{method:'POST',token,body:{action:'submit',nickname,passed,total}});
+ async submit({nickname,passed,total,cumulative}){
+  const token=await this.authenticate();return this.request('/functions/v1/ranked-game',{method:'POST',token,body:{action:'submit',nickname,passed,total,cumulative}});
  }
  async board(){return (await this.request('/functions/v1/ranked-game')).rows;}
 }
