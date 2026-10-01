@@ -14,7 +14,7 @@ Deno.serve(async request=>{
  if(request.method==='OPTIONS')return new Response(null,{status:204,headers});
  try{
   if(request.method==='GET'){
-   const rows=await db(`ranked_best?season=eq.${SEASON}&select=nickname,passed,total,achieved_at&order=passed.desc,total.desc,achieved_at.asc,user_id.asc&limit=50`);
+   const rows=await db(`ranked_nickname_best?season=eq.${SEASON}&select=nickname,passed,total,achieved_at&order=passed.desc,total.desc,achieved_at.asc,name_key.asc&limit=50`);
    return reply({rows});
   }
   if(request.method!=='POST')return reply({error:'操作不支援。'},405);
@@ -24,11 +24,7 @@ Deno.serve(async request=>{
   const auth=await fetch(url+'/auth/v1/user',{headers:{apikey:secret,Authorization:authorization}});
   if(!auth.ok)return reply({error:'玩家登入已失效，請重新開始排名挑戰。'},401);
   const user=await auth.json();if(!user.id)return reply({error:'登入無效。'},401);
-  if(body.action==='claim-name'){
-   const checked=validateResult({action:'submit',nickname:body.nickname,passed:0,total:0});
-   await db('rpc/claim_ranked_name','POST',{p_user:user.id,p_nickname:checked.nickname});
-   return reply({claimed:true});
-  }
+
   const result=validateResult(body);
   await db('rpc/submit_ranked_result','POST',{p_user:user.id,p_nickname:result.nickname,p_passed:result.passed,p_total:result.total});
   return reply({saved:true});
