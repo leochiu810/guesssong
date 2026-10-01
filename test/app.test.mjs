@@ -23,7 +23,7 @@ test('介面自動換題整局、答案鎖定、重來、音訊受阻、錯誤�
   globalThis.Audio = class {constructor(){audios.push(this);} play(){this.playCount=(this.playCount||0)+1;if(rejectAudio)return Promise.reject(Object.assign(new Error(),{name:'NotAllowedError'}));this.onplaying?.();return Promise.resolve();} pause(){} removeAttribute(){} load(){} };
   const get=id=>document.getElementById(id);
   await import('../public/app.js');
-  assert.equal(get('artists').children.length,71);
+  assert.equal(get('artists').children.length,69);
   assert.equal(get('choose-chinese').disabled,false);
   get('choose-chinese').onclick(); assert.equal(get('library').hidden,false); assert.equal(get('home').hidden,true);
   get('back-languages').onclick(); assert.equal(get('home').hidden,false); assert.equal(get('library').hidden,true);

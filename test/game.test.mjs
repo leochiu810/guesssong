@@ -79,10 +79,10 @@ test('五關選項與答案同語言，九選一且歌名不重複',()=>{
  }
 });
 
-test('新增中文十組歌手各七首，名稱別名不重複建立歌手',()=>{
+test('中文新增清單保留八組歌手各七首，名稱別名不重複建立歌手',()=>{
  const chinese=data.categories.find(c=>c.code==='mandarin');
- for(const name of ["荷爾蒙少年","icyball 冰球樂團","溫室雜草 (Easy Weeds)","YELLOW黃宣","旺福 (Wonfu)","李千娜","鄧福如 AFÜ","陳芳語","陳綺貞","deca joins"]){assert.equal(chinese.artists.filter(a=>a===name).length,1);assert.equal(uniqueSongCount(selectedPool(chinese.songs,[name])),7);}
- assert.equal(chinese.artists.length,71);assert.equal(chinese.songs.length,511);
+ for(const name of ["icyball 冰球樂團","YELLOW黃宣","旺福 (Wonfu)","李千娜","鄧福如 AFÜ","陳芳語","陳綺貞","deca joins"]){assert.equal(chinese.artists.filter(a=>a===name).length,1);assert.equal(uniqueSongCount(selectedPool(chinese.songs,[name])),7);}
+ assert.equal(chinese.artists.length,69);assert.equal(chinese.songs.length,497);
 });
 
 test('新增英文第二批七組：各七首且來源與語言完整',()=>{const english=data.categories.find(c=>c.code==='english');for(const name of ["Avril Lavigne","Avicii","One Direction","Gracie Abrams","OneRepublic","Linkin Park","Calum Scott"]){const songs=selectedPool(english.songs,[name]);assert.equal(uniqueSongCount(songs),7);assert.ok(songs.every(t=>t.language==='english'&&t.selectionType==='spotify-top'&&t.spotifyRank>=1&&t.spotifyRank<=10));}});

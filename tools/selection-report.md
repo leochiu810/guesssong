@@ -4,9 +4,9 @@
 
 | 分類 | 歌手 | 歌曲 |
 |---|---:|---:|
-| 中文 | 71 | 511 |
+| 中文 | 69 | 497 |
 | 英文 | 33 | 230 |
-| 日文 | 16 | 116 |
+| 日文 | 18 | 130 |
 | 韓文 | 15 | 107 |
 
 2026-10-02：依要求移除11組歌手、76筆歌曲。
@@ -1557,20 +1557,6 @@
 | ALL THE TIME | 8 | spotify-top |
 | This Feeling (feat. Kelsea Ballerini) | 9 | spotify-top |
 
-## 荷爾蒙少年（7首）
-
-[Spotify來源](https://open.spotify.com/embed/artist/7MR5iqnOtuXv9RMMMQbOIl?locale=zh-TW) · 查核日 2026-09-30
-
-| 歌曲 | 熱門順序 | 選曲類型 |
-|---|---:|---|
-| 4:00 A.M. | 1 | spotify-top |
-| 傾雨 | 2 | spotify-top |
-| 千禧 | 3 | spotify-top |
-| 中華商場1971 (feat. 修齊) | 4 | spotify-top |
-| 141.44 | 5 | spotify-top |
-| 珊珊 | 6 | spotify-top |
-| 失去妳和我自己 | 7 | spotify-top |
-
 ## icyball 冰球樂團（7首）
 
 [Spotify來源](https://open.spotify.com/embed/artist/4GsjZQZJ3viOq4Uw8wZDbW?locale=zh-TW) · 查核日 2026-09-30
@@ -1584,20 +1570,6 @@
 | 你要是真的愛我才不會這樣 | 5 | spotify-top |
 | 說愛我吧 | 6 | spotify-top |
 | 有點喜歡 | 7 | spotify-top |
-
-## 溫室雜草 (Easy Weeds)（7首）
-
-[Spotify來源](https://open.spotify.com/embed/artist/6DZ6tvZTWTDO1vEBvUYfbP?locale=zh-TW) · 查核日 2026-09-30
-
-| 歌曲 | 熱門順序 | 選曲類型 |
-|---|---:|---|
-| 我是真的愛你 (滾石撞樂隊2) | 1 | spotify-top |
-| 在這個年代,找不到浪漫 | 2 | spotify-top |
-| 你迎面走來,再面無表情地離開 | 3 | spotify-top |
-| 春天有腳 | 4 | spotify-top |
-| 那天我們看著星夜 (2019 demo) | 5 | spotify-top |
-| 泥巴 | 6 | spotify-top |
-| 命盤 | 7 | spotify-top |
 
 ## YELLOW黃宣（7首）
 
@@ -1923,3 +1895,33 @@
 | 21 Guns | 8 | spotify-top |
 | When I Come Around | 9 | spotify-top |
 | Last Night On Earth | 10 | spotify-top |
+
+2026-10-02：新增 Atarayo、永遠是深夜有多好。（ZUTOMAYO）各7首。Aimyon 已以「あいみょん」收錄7首，未重複新增。新增歌曲使用 Apple JP 資料，14首試聽連結均已驗證。
+
+## Atarayo（7首）
+
+[Spotify來源](https://open.spotify.com/embed/artist/2yRnjWtHzmDELwYaUiX0Yh?locale=zh-TW) · 查核日 2026-10-02
+
+| 歌曲 | 熱門順序 | 選曲類型 |
+|---|---:|---|
+| 10月無口な君を忘れる | 1 | spotify-top |
+| 「僕は...」 | 2 | spotify-top |
+| 夏霞 | 3 | spotify-top |
+| また夏を追う | 4 | spotify-top |
+| 涼風 feat. 友成空 | 5 | spotify-top |
+| 春となり | 6 | spotify-top |
+| 嘘つき | 7 | spotify-top |
+
+## 永遠是深夜有多好。（7首）
+
+[Spotify來源](https://open.spotify.com/embed/artist/38WbKH6oKAZskBhqDFA8Uj?locale=zh-TW) · 查核日 2026-10-02
+
+| 歌曲 | 熱門順序 | 選曲類型 |
+|---|---:|---|
+| あいつら全員同窓会 | 1 | spotify-top |
+| TAIDADA | 2 | spotify-top |
+| 秒針を噛む | 3 | spotify-top |
+| イチジク煙 | 4 | spotify-top |
+| 残機 | 5 | spotify-top |
+| お勉強しといてよ | 6 | spotify-top |
+| 勘冴えて悔しいわ | 7 | spotify-top |

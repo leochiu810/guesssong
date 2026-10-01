@@ -10507,97 +10507,6 @@
       ]
     },
     {
-      "name": "荷爾蒙少年",
-      "aliases": [
-        "荷爾蒙少年",
-        "荷爾蒙少年",
-        "Hormone Boys"
-      ],
-      "language": "mandarin",
-      "targetCount": 7,
-      "sourceUrl": "https://open.spotify.com/embed/artist/7MR5iqnOtuXv9RMMMQbOIl?locale=zh-TW",
-      "checkedAt": "2026-09-30",
-      "songs": [
-        {
-          "rank": 1,
-          "sourceRank": 1,
-          "title": "4:00A.M.",
-          "spotifyTrack": "spotify:track:3Lb8yEZD7pVHnwuQ9bznx5",
-          "selectionType": "spotify-top",
-          "appleId": 1598855552,
-          "appleArtistId": 1346513340,
-          "appleTitle": "4:00 A.M.",
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 2,
-          "sourceRank": 2,
-          "title": "傾雨",
-          "spotifyTrack": "spotify:track:08CqDxzqfZUFAp5MYf0WpL",
-          "selectionType": "spotify-top",
-          "appleId": 1598855550,
-          "appleArtistId": 1346513340,
-          "appleTitle": "傾雨",
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 3,
-          "sourceRank": 3,
-          "title": "千禧",
-          "spotifyTrack": "spotify:track:2KtYIYW6N1V9D5B5Dr6ggO",
-          "selectionType": "spotify-top",
-          "appleId": 1590123849,
-          "appleArtistId": 1346513340,
-          "appleTitle": "千禧",
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 4,
-          "sourceRank": 4,
-          "title": "中華商場1971 feat. 修齊",
-          "spotifyTrack": "spotify:track:5wigleebXyvvwDUUSGBR68",
-          "selectionType": "spotify-top",
-          "appleId": 1505296140,
-          "appleArtistId": 1346513340,
-          "appleTitle": "中華商場1971 (feat. 修齊)",
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 5,
-          "sourceRank": 5,
-          "title": "141.44",
-          "spotifyTrack": "spotify:track:64f3ZgdRefpc2GWQDFLSFz",
-          "selectionType": "spotify-top",
-          "appleId": 1547954567,
-          "appleArtistId": 1346513340,
-          "appleTitle": "141.44",
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 6,
-          "sourceRank": 6,
-          "title": "珊珊",
-          "spotifyTrack": "spotify:track:0c8T3trS4pqYNokJIsC5Yv",
-          "selectionType": "spotify-top",
-          "appleId": 1590123848,
-          "appleArtistId": 1346513340,
-          "appleTitle": "珊珊",
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 7,
-          "sourceRank": 7,
-          "title": "失去妳和我自己",
-          "spotifyTrack": "spotify:track:67uHwJeWtrSW95o19n6Qkt",
-          "selectionType": "spotify-top",
-          "appleId": 1505296689,
-          "appleArtistId": 1346513340,
-          "appleTitle": "失去妳和我自己",
-          "appleCountry": "TW"
-        }
-      ]
-    },
-    {
       "name": "icyball 冰球樂團",
       "aliases": [
         "icyball 冰球樂團",
@@ -10685,98 +10594,6 @@
           "appleId": 1858197318,
           "appleArtistId": 1102212665,
           "appleTitle": "有點喜歡",
-          "appleCountry": "TW"
-        }
-      ]
-    },
-    {
-      "name": "溫室雜草 (Easy Weeds)",
-      "aliases": [
-        "溫室雜草 (Easy Weeds)",
-        "溫室雜草",
-        "溫室雜草",
-        "Easy Weeds"
-      ],
-      "language": "mandarin",
-      "targetCount": 7,
-      "sourceUrl": "https://open.spotify.com/embed/artist/6DZ6tvZTWTDO1vEBvUYfbP?locale=zh-TW",
-      "checkedAt": "2026-09-30",
-      "songs": [
-        {
-          "rank": 1,
-          "sourceRank": 1,
-          "title": "我是真的愛你 - 滾石撞樂隊2 (原唱:李宗盛)",
-          "spotifyTrack": "spotify:track:07ddfCmFh0ahh10rq9CKzb",
-          "selectionType": "spotify-top",
-          "appleId": 1846498343,
-          "appleArtistId": 1561286177,
-          "appleTitle": "我是真的愛你 (滾石撞樂隊2)",
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 2,
-          "sourceRank": 2,
-          "title": "在這個年代，找不到浪漫",
-          "spotifyTrack": "spotify:track:6KvTwICgd0r2Ff8dqdbRLx",
-          "selectionType": "spotify-top",
-          "appleId": 1800765070,
-          "appleArtistId": 1561286177,
-          "appleTitle": "在這個年代,找不到浪漫",
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 3,
-          "sourceRank": 3,
-          "title": "你迎面走來，再面無表情地離開",
-          "spotifyTrack": "spotify:track:5mrfCdrtTSy7nlV7UHgk6y",
-          "selectionType": "spotify-top",
-          "appleId": 1800765069,
-          "appleArtistId": 1561286177,
-          "appleTitle": "你迎面走來,再面無表情地離開",
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 4,
-          "sourceRank": 4,
-          "title": "春天有腳",
-          "spotifyTrack": "spotify:track:4jNKHduMMVmdPh19bNj9XD",
-          "selectionType": "spotify-top",
-          "appleId": 1800765068,
-          "appleArtistId": 1561286177,
-          "appleTitle": "春天有腳",
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 5,
-          "sourceRank": 5,
-          "title": "那天我們看著星夜 (2019 demo)",
-          "spotifyTrack": "spotify:track:5RjhiqQXLEI3HMWNSTaVjP",
-          "selectionType": "spotify-top",
-          "appleId": 1814829153,
-          "appleArtistId": 1561286177,
-          "appleTitle": "那天我們看著星夜 (2019 demo)",
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 6,
-          "sourceRank": 6,
-          "title": "泥巴",
-          "spotifyTrack": "spotify:track:0uVpZr8Avb49a9O4nHP8r7",
-          "selectionType": "spotify-top",
-          "appleId": 6791126623,
-          "appleArtistId": 1561286177,
-          "appleTitle": "泥巴",
-          "appleCountry": "TW"
-        },
-        {
-          "rank": 7,
-          "sourceRank": 7,
-          "title": "命盤",
-          "spotifyTrack": "spotify:track:7pj3Y9AthzXugrA4aLSqsH",
-          "selectionType": "spotify-top",
-          "appleId": 6798638764,
-          "appleArtistId": 1561286177,
-          "appleTitle": "命盤",
           "appleCountry": "TW"
         }
       ]
@@ -12850,6 +12667,189 @@
           "appleArtistId": 1734551937,
           "appleTitle": "Cherish (My Love)",
           "appleCountry": "TW"
+        }
+      ]
+    },
+    {
+      "name": "Atarayo",
+      "aliases": [
+        "Atarayo",
+        "Atarayo",
+        "あたらよ"
+      ],
+      "language": "japanese",
+      "targetCount": 7,
+      "sourceUrl": "https://open.spotify.com/embed/artist/2yRnjWtHzmDELwYaUiX0Yh?locale=zh-TW",
+      "checkedAt": "2026-10-02",
+      "songs": [
+        {
+          "rank": 1,
+          "sourceRank": 1,
+          "title": "10月無口な君を忘れる",
+          "spotifyTrack": "spotify:track:2YQ8TlTmNheRI3VafoDpod",
+          "selectionType": "spotify-top",
+          "appleId": 1558400919,
+          "appleArtistId": 1558407178,
+          "appleTitle": "10月無口な君を忘れる",
+          "appleCountry": "JP"
+        },
+        {
+          "rank": 2,
+          "sourceRank": 2,
+          "title": "「僕は...」",
+          "spotifyTrack": "spotify:track:7K9Go4rPZqNWdYzy5wDNhE",
+          "selectionType": "spotify-top",
+          "appleId": 1720898327,
+          "appleArtistId": 1558407178,
+          "appleTitle": "「僕は...」",
+          "appleCountry": "JP"
+        },
+        {
+          "rank": 3,
+          "sourceRank": 3,
+          "title": "夏霞",
+          "spotifyTrack": "spotify:track:34jv2mOVzPjncrBncjYl6F",
+          "selectionType": "spotify-top",
+          "appleId": 1578238903,
+          "appleArtistId": 1558407178,
+          "appleTitle": "夏霞",
+          "appleCountry": "JP"
+        },
+        {
+          "rank": 4,
+          "sourceRank": 4,
+          "title": "また夏を追う",
+          "spotifyTrack": "spotify:track:53mioS2nnOFyknS2qGPig8",
+          "selectionType": "spotify-top",
+          "appleId": 1637768598,
+          "appleArtistId": 1558407178,
+          "appleTitle": "また夏を追う",
+          "appleCountry": "JP"
+        },
+        {
+          "rank": 5,
+          "sourceRank": 5,
+          "title": "涼風 - feat. 友成空",
+          "spotifyTrack": "spotify:track:1dHoORp875dv0CJrqZ4kVF",
+          "selectionType": "spotify-top",
+          "appleId": 6793854736,
+          "appleArtistId": 1558407178,
+          "appleTitle": "涼風 feat. 友成空",
+          "appleCountry": "JP"
+        },
+        {
+          "rank": 6,
+          "sourceRank": 6,
+          "title": "春となり",
+          "spotifyTrack": "spotify:track:0QAA0tEJjMFnYrrsRPNYt3",
+          "selectionType": "spotify-top",
+          "appleId": 1868571279,
+          "appleArtistId": 1558407178,
+          "appleTitle": "春となり",
+          "appleCountry": "JP"
+        },
+        {
+          "rank": 7,
+          "sourceRank": 7,
+          "title": "嘘つき",
+          "spotifyTrack": "spotify:track:74ndzfvtog0KrABo5cwpmW",
+          "selectionType": "spotify-top",
+          "appleId": 1586096310,
+          "appleArtistId": 1558407178,
+          "appleTitle": "嘘つき",
+          "appleCountry": "JP"
+        }
+      ]
+    },
+    {
+      "name": "永遠是深夜有多好。",
+      "aliases": [
+        "ZUTOMAYO",
+        "ZUTOMAYO",
+        "ずっと真夜中でいいのに。",
+        "永遠是深夜有多好。"
+      ],
+      "language": "japanese",
+      "targetCount": 7,
+      "sourceUrl": "https://open.spotify.com/embed/artist/38WbKH6oKAZskBhqDFA8Uj?locale=zh-TW",
+      "checkedAt": "2026-10-02",
+      "songs": [
+        {
+          "rank": 1,
+          "sourceRank": 1,
+          "title": "あいつら全員同窓会",
+          "spotifyTrack": "spotify:track:7rzoBRR4LbJZH5t7Q6qeTn",
+          "selectionType": "spotify-top",
+          "appleId": 1570795403,
+          "appleArtistId": 1428083875,
+          "appleTitle": "あいつら全員同窓会",
+          "appleCountry": "JP"
+        },
+        {
+          "rank": 2,
+          "sourceRank": 2,
+          "title": "TAIDADA",
+          "spotifyTrack": "spotify:track:7pkveAvxwTizWCylSQ31sg",
+          "selectionType": "spotify-top",
+          "appleId": 1770242096,
+          "appleArtistId": 1428083875,
+          "appleTitle": "TAIDADA",
+          "appleCountry": "JP"
+        },
+        {
+          "rank": 3,
+          "sourceRank": 3,
+          "title": "秒針を噛む",
+          "spotifyTrack": "spotify:track:4HgsPAX3MmMgIT60hJ4W4U",
+          "selectionType": "spotify-top",
+          "appleId": 1428083880,
+          "appleArtistId": 1428083875,
+          "appleTitle": "秒針を噛む",
+          "appleCountry": "JP"
+        },
+        {
+          "rank": 4,
+          "sourceRank": 4,
+          "title": "イチジク煙",
+          "spotifyTrack": "spotify:track:5V4zMXD1SYSro1vpliQwWA",
+          "selectionType": "spotify-top",
+          "appleId": 6784582944,
+          "appleArtistId": 1428083875,
+          "appleTitle": "イチジク煙",
+          "appleCountry": "JP"
+        },
+        {
+          "rank": 5,
+          "sourceRank": 5,
+          "title": "残機",
+          "spotifyTrack": "spotify:track:2fJbss5uUmmBqn7qFkmyWj",
+          "selectionType": "spotify-top",
+          "appleId": 1649264715,
+          "appleArtistId": 1428083875,
+          "appleTitle": "残機",
+          "appleCountry": "JP"
+        },
+        {
+          "rank": 6,
+          "sourceRank": 6,
+          "title": "お勉強しといてよ",
+          "spotifyTrack": "spotify:track:3sgJTMHqDwxfsBIMqvkXKE",
+          "selectionType": "spotify-top",
+          "appleId": 1511078938,
+          "appleArtistId": 1428083875,
+          "appleTitle": "お勉強しといてよ",
+          "appleCountry": "JP"
+        },
+        {
+          "rank": 7,
+          "sourceRank": 7,
+          "title": "勘冴えて悔しいわ",
+          "spotifyTrack": "spotify:track:7zbfS30vKiHU8oBs6Wi1Qp",
+          "selectionType": "spotify-top",
+          "appleId": 1481464101,
+          "appleArtistId": 1428083875,
+          "appleTitle": "勘冴えて悔しいわ",
+          "appleCountry": "JP"
         }
       ]
     }
