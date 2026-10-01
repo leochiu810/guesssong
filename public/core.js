@@ -7,7 +7,22 @@ export function shuffle(items, random = Math.random) {
 export function createRound(songs, random = Math.random) {
   const unique = [...new Map(shuffle(songs, random).map(s => [titleKey(s.title), s])).values()];
   if (unique.length < 10) throw new Error('此分類題庫不足十首，請更新題庫。');
-  return shuffle(unique, random).slice(0, 10).map(answer => {
+  return questionsFor(shuffle(unique, random).slice(0, 10),songs,random);
+}
+export function createBalancedRound(songs, random = Math.random) {
+  const languages=shuffle([...new Set(songs.map(s=>s.language))],random);
+  if(!languages.length)throw Error('挑戰題庫不足，請更新題庫。');
+  const answers=[],used=new Set(),base=Math.floor(10/languages.length),extra=10%languages.length;
+  for(const [index,language] of languages.entries()){
+    const count=base+(index<extra?1:0);
+    const candidates=[...new Map(shuffle(songs.filter(s=>s.language===language&&!used.has(titleKey(s.title))),random).map(s=>[titleKey(s.title),s])).values()];
+    if(candidates.length<count)throw Error('此語言題庫不足以平均分配，請更新題庫。');
+    for(const song of shuffle(candidates,random).slice(0,count)){answers.push(song);used.add(titleKey(song.title));}
+  }
+  return questionsFor(shuffle(answers,random),songs,random);
+}
+function questionsFor(answers,songs,random){
+  return answers.map(answer => {
     const candidates = songs.filter(s => s.language === answer.language && titleKey(s.title) !== titleKey(answer.title));
     const distinct = [...new Map(shuffle(candidates, random).map(s => [titleKey(s.title), s])).values()];
     if (distinct.length < 8) throw new Error('此語言題庫不足九個不同歌名，請更新題庫。');
@@ -21,7 +36,7 @@ export function selectedPool(songs, artists) {
 export function uniqueSongCount(songs) { return new Set(songs.map(s => titleKey(s.title))).size; }
 export function score(elapsed, correct) { return correct ? Math.max(0, 100 - 2 * Math.ceil(Math.max(0, elapsed) / 1000)) : 0; }
 export class Game {
-  constructor(songs, now = () => performance.now()) { this.questions = createRound(songs); this.now = now; this.index = 0; this.answers = []; this.phase = 'ready'; }
+  constructor(songs, now = () => performance.now(), roundFactory = createRound) { this.questions = roundFactory(songs); this.now = now; this.index = 0; this.answers = []; this.phase = 'ready'; }
   show() { if (this.phase !== 'ready') return false; this.started = this.now(); this.phase = 'question'; return true; }
   answer(id) {
     if (this.phase !== 'question' || !this.questions[this.index].options.some(s => s.id === id)) return null;

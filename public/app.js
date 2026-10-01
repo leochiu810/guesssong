@@ -1,7 +1,7 @@
-import {LocalRankedGame} from './ranking-local.js?v=0.7.1';
-import {RankingClient, rankingConfigured} from './ranking-client.js?v=0.7.1';
-import {createRankedUI, renderBoard} from './ranking-ui.js?v=0.7.1-score4';
-import { Game, selectedPool, uniqueSongCount, challengePool } from './core.js?v=0.7.1';
+import {LocalRankedGame} from './ranking-local.js?v=0.7.2';
+import {RankingClient, rankingConfigured} from './ranking-client.js?v=0.7.2';
+import {createRankedUI, renderBoard} from './ranking-ui.js?v=0.7.2';
+import { Game, selectedPool, uniqueSongCount, challengePool, createBalancedRound } from './core.js?v=0.7.2';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 let artistInputs = [], practiceCategory;
@@ -89,7 +89,7 @@ function startChallenge() {
   stop(); mode = 'challenge';
   try {
     currentCategory = {name: `挑戰模式 · 第 ${level + 1} / 5 關 · 目標 ${thresholds[level]} 分`};
-    game = new Game(challengePool(catalog.categories, level));
+    game = new Game(challengePool(catalog.categories, level),undefined,createBalancedRound);
     showQuestion();
   } catch (error) { fail(error.message); }
 }

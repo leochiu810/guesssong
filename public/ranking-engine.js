@@ -1,4 +1,4 @@
-import {createRound, challengePool, score} from './core.js?v=0.7.1';
+import {createBalancedRound, challengePool, score} from './core.js?v=0.7.2';
 export const THRESHOLDS = [500,600,700,800,900];
 export const SEASON = 'v1';
 export function nickname(value) {
@@ -7,7 +7,7 @@ export function nickname(value) {
  return name;
 }
 function stage(state,categories,now){
- state.questions=createRound(challengePool(categories,state.level));state.index=0;state.answers=[];state.stageScore=0;state.phase='question';state.openedAt=now;state.questionToken=crypto.randomUUID();
+ state.questions=createBalancedRound(challengePool(categories,state.level));state.index=0;state.answers=[];state.stageScore=0;state.phase='question';state.openedAt=now;state.questionToken=crypto.randomUUID();
 }
 export function begin(name,categories,now=Date.now()){
  const state={runId:crypto.randomUUID(),nickname:nickname(name),season:SEASON,level:0,total:0,passed:0,createdAt:now,revision:0};stage(state,categories,now);return state;
@@ -37,3 +37,4 @@ export function snapshot(s){
   question:{previewUrl:q.answer.previewUrl,options:q.options.map(o=>({id:o.id,title:o.title})),...(result?{answer:q.answer,result:s.answers[s.index]}:{})},
   ...(s.phase==='result'?{history:s.questions.map((q,i)=>({title:q.answer.title,artist:q.answer.artist,storeUrl:q.answer.storeUrl,...s.answers[i]}))}:{})};
 }
+
