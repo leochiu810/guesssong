@@ -12852,6 +12852,322 @@
           "appleCountry": "JP"
         }
       ]
+    },
+    {
+      "name": "庾澄慶",
+      "aliases": [
+        "庾澄慶",
+        "庾澄慶"
+      ],
+      "language": "mandarin",
+      "targetCount": 7,
+      "sourceUrl": "https://open.spotify.com/embed/artist/6VbRanWSU3pdDhJnhSfGmY?locale=zh-TW",
+      "checkedAt": "2026-10-02",
+      "songs": [
+        {
+          "rank": 1,
+          "sourceRank": 1,
+          "title": "情非得已",
+          "spotifyTrack": "spotify:track:4KBegMBVyHsfC7fPOztTzV",
+          "selectionType": "spotify-top",
+          "appleId": 312506680,
+          "appleArtistId": 306466690,
+          "appleTitle": "情非得已",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 2,
+          "sourceRank": 2,
+          "title": "缺口",
+          "spotifyTrack": "spotify:track:26tYQnfiKZgAJohuBUCKp7",
+          "selectionType": "spotify-top",
+          "appleId": 910853871,
+          "appleArtistId": 306466690,
+          "appleTitle": "缺口",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 3,
+          "sourceRank": 3,
+          "title": "春泥",
+          "spotifyTrack": "spotify:track:126sFLTpIW0IlvuRPVNB95",
+          "selectionType": "spotify-top",
+          "appleId": 339383985,
+          "appleArtistId": 306466690,
+          "appleTitle": "春泥",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 4,
+          "sourceRank": 4,
+          "title": "靜靜的",
+          "spotifyTrack": "spotify:track:73Cw4sdOwn2NsmGRE4hoMA",
+          "selectionType": "spotify-top",
+          "appleId": 335482422,
+          "appleArtistId": 306466690,
+          "appleTitle": "靜靜的",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 5,
+          "sourceRank": 5,
+          "title": "讓我一次愛個夠",
+          "spotifyTrack": "spotify:track:7vC0DBBwpBgFKzJ6tmEw53",
+          "selectionType": "spotify-top",
+          "appleId": 567662661,
+          "appleArtistId": 306466690,
+          "appleTitle": "讓我一次愛個夠",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 6,
+          "sourceRank": 6,
+          "title": "海嘯",
+          "spotifyTrack": "spotify:track:7BxRGUJk9ArTRBZ70HGC0n",
+          "selectionType": "spotify-top",
+          "appleId": 312506644,
+          "appleArtistId": 306466690,
+          "appleTitle": "海嘯",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 7,
+          "sourceRank": 7,
+          "title": "戒不掉",
+          "spotifyTrack": "spotify:track:0k3UK6ifzHmyPts4QCfsLN",
+          "selectionType": "spotify-top",
+          "appleId": 335482423,
+          "appleArtistId": 306466690,
+          "appleTitle": "戒不掉",
+          "appleCountry": "TW"
+        }
+      ]
+    },
+    {
+      "name": "伍佰",
+      "aliases": [
+        "伍佰",
+        "伍佰"
+      ],
+      "language": "mandarin",
+      "targetCount": 7,
+      "sourceUrl": "https://open.spotify.com/embed/artist/5H8TJITZE1sPjVR2ACzXNS?locale=zh-TW",
+      "checkedAt": "2026-10-02",
+      "songs": [
+        {
+          "rank": 1,
+          "sourceRank": 1,
+          "title": "淚橋",
+          "spotifyTrack": "spotify:track:0NAcDn6U2GB2Arhspmh38S",
+          "selectionType": "spotify-top",
+          "appleId": 808110752,
+          "appleArtistId": 382356207,
+          "appleTitle": "淚橋",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 2,
+          "sourceRank": 2,
+          "title": "夢醒時分",
+          "spotifyTrack": "spotify:track:51fGtLs5vdK2NOumVhMXru",
+          "selectionType": "spotify-top",
+          "appleId": 1442405077,
+          "appleArtistId": 382356207,
+          "appleTitle": "夢醒時分",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 3,
+          "sourceRank": 3,
+          "title": "挪威的森林",
+          "spotifyTrack": "spotify:track:5KdZLYyoBP0qsjDTDP28do",
+          "selectionType": "spotify-top",
+          "appleId": 379810432,
+          "appleArtistId": 327469111,
+          "appleTitle": "挪威的森林",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 4,
+          "sourceRank": 4,
+          "title": "Last Dance",
+          "spotifyTrack": "spotify:track:49AQAXswd32dFJUWOegVWO",
+          "selectionType": "spotify-top",
+          "appleId": 1333435212,
+          "appleArtistId": 327469111,
+          "appleTitle": "Last Dance",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 5,
+          "sourceRank": 5,
+          "title": "浪人情歌",
+          "spotifyTrack": "spotify:track:6WttjgrcxCq1CZnydPVVvt",
+          "selectionType": "spotify-top",
+          "appleId": 379402109,
+          "appleArtistId": 327469111,
+          "appleTitle": "浪人情歌",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 6,
+          "sourceRank": 6,
+          "title": "突然的自我",
+          "spotifyTrack": "spotify:track:6jLUrsNfwRc2DOuV0MaHyJ",
+          "selectionType": "spotify-top",
+          "appleId": 840076048,
+          "appleArtistId": 382356207,
+          "appleTitle": "突然的自我",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 8,
+          "sourceRank": 8,
+          "title": "牽掛",
+          "spotifyTrack": "spotify:track:3mkZwD5EM5M3Koft1YXn2j",
+          "selectionType": "spotify-top",
+          "appleId": 379402095,
+          "appleArtistId": 327469111,
+          "appleTitle": "牽掛",
+          "appleCountry": "TW"
+        }
+      ]
+    },
+    {
+      "name": "張學友",
+      "aliases": [
+        "張學友",
+        "張學友"
+      ],
+      "language": "mandarin",
+      "targetCount": 7,
+      "sourceUrl": "https://open.spotify.com/embed/artist/1Hu58yHg2CXNfDhlPd7Tdd?locale=zh-TW",
+      "checkedAt": "2026-10-02",
+      "songs": [
+        {
+          "rank": 1,
+          "sourceRank": 1,
+          "title": "吻別",
+          "spotifyTrack": "spotify:track:1k0YFNylstvLBC3C5vPWP9",
+          "selectionType": "spotify-top",
+          "appleId": 1443431915,
+          "appleArtistId": 256718696,
+          "appleTitle": "吻別",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 2,
+          "sourceRank": 2,
+          "title": "每天愛你多一些",
+          "spotifyTrack": "spotify:track:7uzJKRRrTqxUOeTtwQMd36",
+          "selectionType": "spotify-top",
+          "appleId": 6786966586,
+          "appleArtistId": 256718696,
+          "appleTitle": "每天愛你多一些",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 3,
+          "sourceRank": 3,
+          "title": "一千個傷心的理由",
+          "spotifyTrack": "spotify:track:2qGihe72sYAOwt2w5EjtNp",
+          "selectionType": "spotify-top",
+          "appleId": 1440912487,
+          "appleArtistId": 256718696,
+          "appleTitle": "一千個傷心的理由",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 4,
+          "sourceRank": 4,
+          "title": "祇想一生跟你走",
+          "spotifyTrack": "spotify:track:2awAl8NFhJMHg5rpKmF6Qq",
+          "selectionType": "spotify-top",
+          "appleId": 1467711538,
+          "appleArtistId": 256718696,
+          "appleTitle": "祗想一生跟你走",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 5,
+          "sourceRank": 5,
+          "title": "分手總要在雨天",
+          "spotifyTrack": "spotify:track:6oNcphQ4QKhOK6QYgDmoht",
+          "selectionType": "spotify-top",
+          "appleId": 1443840823,
+          "appleArtistId": 256718696,
+          "appleTitle": "分手總要在雨天",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 6,
+          "sourceRank": 6,
+          "title": "等你等到我心痛",
+          "spotifyTrack": "spotify:track:5M2MzFVZ7dEkLrP4Hg7S2d",
+          "selectionType": "spotify-top",
+          "appleId": 1443311489,
+          "appleArtistId": 256718696,
+          "appleTitle": "等你等到我心痛",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 7,
+          "sourceRank": 7,
+          "title": "你最珍貴",
+          "spotifyTrack": "spotify:track:2d3DoAIDeUC58X3mzDRmDs",
+          "selectionType": "spotify-top",
+          "appleId": 1442804732,
+          "appleArtistId": 256718696,
+          "appleTitle": "你最珍貴",
+          "appleCountry": "TW"
+        }
+      ]
+    },
+    {
+      "name": "頑童MJ116",
+      "aliases": [
+        "頑童MJ116",
+        "頑童Mj116"
+      ],
+      "language": "mandarin",
+      "targetCount": 7,
+      "sourceUrl": "https://open.spotify.com/embed/artist/7aMQdNM05rPkcHS1ethHUx?locale=zh-TW",
+      "checkedAt": "2026-10-02",
+      "songs": [
+        {
+          "rank": 1,
+          "sourceRank": 1,
+          "title": "SPOTLIGHT",
+          "spotifyTrack": "spotify:track:4M7VP5IiIj1saXNFINmxt3",
+          "selectionType": "spotify-top",
+          "appleId": 1312736620,
+          "appleArtistId": 891265611,
+          "appleTitle": "SPOTLIGHT",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 2,
+          "sourceRank": 2,
+          "title": "Just Believe",
+          "spotifyTrack": "spotify:track:1qrpfAFspxxhghnPeRHSsQ",
+          "selectionType": "spotify-top",
+          "appleId": 891265638,
+          "appleArtistId": 891265611,
+          "appleTitle": "Just Believe",
+          "appleCountry": "TW"
+        },
+        {
+          "rank": 9,
+          "sourceRank": 9,
+          "title": "雙手插口袋",
+          "spotifyTrack": "spotify:track:0SOFIaw48qjOppeEkqDXrb",
+          "selectionType": "spotify-top",
+          "appleId": 920345276,
+          "appleArtistId": 891265611,
+          "appleTitle": "雙手插口袋 (feat. 張震嶽)",
+          "appleCountry": "TW"
+        }
+      ]
     }
   ]
 }

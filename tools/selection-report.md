@@ -4,7 +4,7 @@
 
 | 分類 | 歌手 | 歌曲 |
 |---|---:|---:|
-| 中文 | 69 | 497 |
+| 中文 | 73 | 521 |
 | 英文 | 33 | 230 |
 | 日文 | 18 | 130 |
 | 韓文 | 15 | 107 |
@@ -1925,3 +1925,57 @@
 | 残機 | 5 | spotify-top |
 | お勉強しといてよ | 6 | spotify-top |
 | 勘冴えて悔しいわ | 7 | spotify-top |
+
+2026-10-02：新增庾澄慶、伍佰、張學友各7首、頑童MJ116共3首，合計24首。伍佰排除熱門第7首現場版本；張學友「祇想一生跟你走」與Apple「祗想一生跟你走」核對為同曲。頑童熱門前10首仅配對到3首可用TW試聽，依規則不足不補。24首試聽連結驗證成功。
+
+## 張學友（7首）
+
+[Spotify來源](https://open.spotify.com/embed/artist/1Hu58yHg2CXNfDhlPd7Tdd?locale=zh-TW) · 查核日 2026-10-02
+
+| 歌曲 | 熱門順序 | 選曲類型 |
+|---|---:|---|
+| 吻別 | 1 | spotify-top |
+| 每天愛你多一些 | 2 | spotify-top |
+| 一千個傷心的理由 | 3 | spotify-top |
+| 祗想一生跟你走 | 4 | spotify-top |
+| 分手總要在雨天 | 5 | spotify-top |
+| 等你等到我心痛 | 6 | spotify-top |
+| 你最珍貴 | 7 | spotify-top |
+
+## 伍佰（7首）
+
+[Spotify來源](https://open.spotify.com/embed/artist/5H8TJITZE1sPjVR2ACzXNS?locale=zh-TW) · 查核日 2026-10-02
+
+| 歌曲 | 熱門順序 | 選曲類型 |
+|---|---:|---|
+| 淚橋 | 1 | spotify-top |
+| 夢醒時分 | 2 | spotify-top |
+| 挪威的森林 | 3 | spotify-top |
+| Last Dance | 4 | spotify-top |
+| 浪人情歌 | 5 | spotify-top |
+| 突然的自我 | 6 | spotify-top |
+| 牽掛 | 8 | spotify-top |
+
+## 庾澄慶（7首）
+
+[Spotify來源](https://open.spotify.com/embed/artist/6VbRanWSU3pdDhJnhSfGmY?locale=zh-TW) · 查核日 2026-10-02
+
+| 歌曲 | 熱門順序 | 選曲類型 |
+|---|---:|---|
+| 情非得已 | 1 | spotify-top |
+| 缺口 | 2 | spotify-top |
+| 春泥 | 3 | spotify-top |
+| 靜靜的 | 4 | spotify-top |
+| 讓我一次愛個夠 | 5 | spotify-top |
+| 海嘯 | 6 | spotify-top |
+| 戒不掉 | 7 | spotify-top |
+
+## 頑童MJ116（3首）
+
+[Spotify來源](https://open.spotify.com/embed/artist/7aMQdNM05rPkcHS1ethHUx?locale=zh-TW) · 查核日 2026-10-02
+
+| 歌曲 | 熱門順序 | 選曲類型 |
+|---|---:|---|
+| SPOTLIGHT | 1 | spotify-top |
+| Just Believe | 2 | spotify-top |
+| 雙手插口袋 (feat. 張震嶽) | 9 | spotify-top |
