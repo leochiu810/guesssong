@@ -83,7 +83,7 @@ for (const [code,id] of Object.entries(languageButtons)) $(id).onclick = () => {
 };
 $('back-languages').onclick = home;
 $('choose-challenge').onclick = () => { if (!catalog) return; screen('challenge'); $('challenge-title').focus(); };
-$('challenge-home').onclick = home;
+
 function startChallenge() {
   if (!catalog) return;
   stop(); mode = 'challenge';
@@ -93,7 +93,7 @@ function startChallenge() {
     showQuestion();
   } catch (error) { fail(error.message); }
 }
-$('start-challenge').onclick = () => { level = 0; startChallenge(); };
+if ($('start-challenge')) $('start-challenge').onclick = () => { level = 0; startChallenge(); };
 $('next-level').onclick = () => {
   if (mode !== 'challenge' || game?.phase !== 'finished' || game.total < thresholds[level] || level >= 4) return;
   level++; startChallenge();
