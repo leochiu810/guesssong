@@ -1,0 +1,2 @@
+[functions.ranked-game]
+verify_jwt = false

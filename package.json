@@ -1,0 +1,15 @@
+{
+  "name": "guess-song-pages",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node tools/serve.mjs",
+    "update-data": "node tools/update-data.mjs",
+    "test": "node --test",
+    "build": "node tools/build.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "version": "0.6.0"
+}
