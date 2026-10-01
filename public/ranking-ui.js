@@ -31,6 +31,7 @@ export function createRankedUI({root,client,onExit,onBoard,getVolume,onVolume}){
   }
   const top=el('div',undefined,'topline');top.append(el('h2',`排名挑戰 · 第 ${state.level+1} 關`),button('結束本局',()=>{cancel();onExit();},'text-button'));root.append(top);
   const stats=el('div',undefined,'stats'),clock=el('span','0.0 秒');stats.append(el('span',`第 ${state.index+1} / 10 題`),clock,el('strong',`累積 ${state.stageScore} 分`,'ranked-score'));root.append(stats);
+  root.append(el('p',`通關需要 ${thresholds[state.level]} 分`,'pass-target'));
   const status=el('p',state.phase==='question'?'正在連接 Apple 試聽…':'答案已揭曉','fine');root.append(status);
   const unlock=button('播放歌曲',()=>play(status,unlock),'text-button');unlock.hidden=true;root.append(unlock);
   const volume=el('div',undefined,'volume-control'),label=el('label','音量'),slider=el('input'),output=el('output',Math.round(getVolume()*100)+'%');slider.type='range';slider.id='ranked-volume';slider.min='0';slider.max='100';slider.value=String(getVolume()*100);label.htmlFor=slider.id;

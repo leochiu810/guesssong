@@ -1,4 +1,4 @@
-import {createRound, challengePool, score} from './core.js?v=0.6.0';
+import {createRound, challengePool, score} from './core.js?v=0.6.2';
 export const THRESHOLDS = [500,600,700,800,900];
 export const SEASON = 'v1';
 export function nickname(value) {

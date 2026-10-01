@@ -20,3 +20,5 @@
 .header-nav{display:flex;align-items:center;gap:36px}.header-nav .text-button{font-family:inherit;font-size:22px;font-weight:900;line-height:normal;color:inherit;text-decoration:none;padding:0;border:0;border-radius:0;background:none}.header-nav .text-button:hover:not(:disabled){background:none;transform:none}@media(max-width:600px){.header-nav{gap:24px}}
 
 
+
+.pass-target{margin:16px 0;padding:12px 16px;border-radius:10px;background:#e6ebe2;color:var(--ink);font-size:16px;font-weight:700}

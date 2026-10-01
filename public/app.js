@@ -1,7 +1,7 @@
-import {LocalRankedGame} from './ranking-local.js?v=0.6.0';
-import {RankingClient, rankingConfigured} from './ranking-client.js?v=0.6.0';
-import {createRankedUI, renderBoard} from './ranking-ui.js?v=0.6.0';
-import { Game, selectedPool, uniqueSongCount, challengePool } from './core.js?v=0.6.0';
+import {LocalRankedGame} from './ranking-local.js?v=0.6.2';
+import {RankingClient, rankingConfigured} from './ranking-client.js?v=0.6.2';
+import {createRankedUI, renderBoard} from './ranking-ui.js?v=0.6.2-target1';
+import { Game, selectedPool, uniqueSongCount, challengePool } from './core.js?v=0.6.2';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 let artistInputs = [], practiceCategory;
@@ -33,6 +33,7 @@ function play() {
 }
 function showQuestion() {
   stop(true); const token = generation; const q = game.questions[game.index];
+  $('pass-target').hidden = mode !== 'challenge'; $('pass-target').textContent = mode === 'challenge' ? `第 ${level + 1} 關 · 通關需要 ${thresholds[level]} 分` : '';
   $('reveal').hidden = true; $('progress').textContent = `第 ${game.index + 1} / 10 題`; $('correct').textContent = game.correct; $('bar').style.width = `${(game.index + 1) * 10}%`; $('timer').textContent = '0.0 秒'; $('live-score').textContent = game.total;
   $('audio-status').textContent = '正在連接 Apple 試聽…'; $('song-link').href = q.answer.storeUrl;
   $('options').replaceChildren(...q.options.map(s => { const b = document.createElement('button'); b.textContent = s.title; b.dataset.id = s.id; b.onclick = () => answer(s.id); return b; }));
