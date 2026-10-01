@@ -167,7 +167,7 @@ async function showLeaderboard(){
  $('leaderboard-rows').replaceChildren();
  if(!cloudReady){$('leaderboard-status').textContent='排行榜尚未開放。';return;}
  $('leaderboard-status').textContent='正在讀取排名…';
- try{const rows=await rankingClient.board();if(request!==boardRequest)return;renderBoard($('leaderboard-rows'),rows);$('leaderboard-status').textContent='前50名 · 到達關卡優先，再比該關最高得分；同分先達成者在前。';}
+ try{const rows=await rankingClient.board();if(request!==boardRequest)return;renderBoard($('leaderboard-rows'),rows);$('leaderboard-status').textContent='';}
  catch(error){if(request===boardRequest)$('leaderboard-status').textContent=error.message;}
 }
 $('start-ranked').onclick=()=>{
@@ -176,6 +176,7 @@ $('start-ranked').onclick=()=>{
  if(!/^[\p{L}\p{N}\p{M}\p{So}\p{Sk}\u200D _.-]{1,16}$/u.test(name)){$('ranking-setup-status').textContent='暱稱可使用文字、數字與 Emoji，最多16個字元（組合 Emoji 可能占多個字元）。';return;}
  stop();screen('ranked');rankedUI.start(name);
 };
+
 
 
 
