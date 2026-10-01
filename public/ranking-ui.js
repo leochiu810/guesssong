@@ -9,15 +9,16 @@ export function createRankedUI({root,client,onExit,onBoard,getVolume,onVolume}){
  function fail(message){stop();root.replaceChildren(el('h2','排名挑戰暫停'),el('p',message),el('p','已完成關卡的最佳紀錄仍會保留。','fine'),button('回首頁',()=>{cancel();onExit();}));}
  async function send(action,extra={}){
   if(busy)return;busy=true;const token=epoch;
-  try{const next=await client.command(action,state,extra);if(token!==epoch)return;state=next;busy=false;render();if(action==='start'||action==='next-level'){const note=el('p','正在更新關卡紀錄…','fine');root.append(note);client.save().then(()=>{if(token===epoch)note.remove();}).catch(()=>{if(token===epoch)note.textContent='關卡紀錄暫未儲存，完成本關後會再次儲存。';});}}
+  try{const next=await client.command(action,state,extra);if(token!==epoch)return;state=next;busy=false;render(action==='answer'&&state.phase==='result');if(action==='start'||action==='next-level'){const note=el('p','正在更新關卡紀錄…','fine');root.append(note);client.save().then(()=>{if(token===epoch)note.remove();}).catch(()=>{if(token===epoch)note.textContent='關卡紀錄暫未儲存，完成本關後會再次儲存。';});}}
   catch(error){if(token!==epoch)return;busy=false;fail(error.message);}
  }
  function play(status,unlock){
   const token=epoch;audio.play().then(()=>{if(token===epoch)unlock.hidden=true;}).catch(()=>{if(token===epoch){unlock.hidden=false;status.textContent='請點播放歌曲啟用音訊；計時仍持續。';}});
  }
- function render(){
+ function render(finalReveal=false){
+  const phase=finalReveal?'reveal':state.phase;
   stop();root.replaceChildren();
-  if(state.phase==='result'){
+  if(phase==='result'){
    const passed=state.stageScore>=thresholds[state.level];
    root.append(el('h2',`第 ${state.level+1} 關${passed?'通過':'挑戰失敗'}`),el('p',`本關 ${state.stageScore} / 1,000 分`,'ranked-score'),el('p',`本次挑戰：第 ${state.level+1} 關 · 最高得分 ${state.stageScore} 分`));
    const saving=el('p','正在儲存成績…','fine'),token=epoch;
@@ -33,20 +34,20 @@ export function createRankedUI({root,client,onExit,onBoard,getVolume,onVolume}){
   const top=el('div',undefined,'topline');top.append(el('h2',`排名挑戰 · 第 ${state.level+1} 關`),button('結束本局',()=>{cancel();onExit();},'text-button'));root.append(top);
   const stats=el('div',undefined,'stats'),clock=el('span','0.0 秒');stats.append(el('span',`第 ${state.index+1} / 10 題`),clock,el('strong',`最高得分 ${highestScore(state)} 分`,'ranked-score'));root.append(stats);
   root.append(el('p',`本關 ${state.stageScore} 分 · 通關需要 ${thresholds[state.level]} 分`,'pass-target'));
-  const status=el('p',state.phase==='question'?'正在連接 Apple 試聽…':'答案已揭曉','fine');root.append(status);
+  const status=el('p',phase==='question'?'正在連接 Apple 試聽…':'答案已揭曉','fine');root.append(status);
   const unlock=button('播放歌曲',()=>play(status,unlock),'text-button');unlock.hidden=true;root.append(unlock);
   const volume=el('div',undefined,'volume-control'),label=el('label','音量'),slider=el('input'),output=el('output',Math.round(getVolume()*100)+'%');slider.type='range';slider.id='ranked-volume';slider.min='0';slider.max='100';slider.value=String(getVolume()*100);label.htmlFor=slider.id;
   slider.oninput=()=>{const value=Number(slider.value)/100;onVolume(value);output.textContent=value===0?'靜音':Math.round(value*100)+'%';if(audio){audio.volume=value;audio.muted=value===0;}};volume.append(label,slider,output);root.append(volume);
-  const options=el('div',undefined,'options');for(const option of state.question.options){const b=button(option.title,()=>{if(busy||state.phase!=='question')return;stop();for(const child of options.children)child.disabled=true;status.textContent='正在核對答案…';send('answer',{selected:option.id});},'');b.disabled=state.phase!=='question';if(state.phase==='reveal'){if(option.id===state.question.answer.id)b.className='right';else if(option.id===state.question.result.selected)b.className='wrong';}options.append(b);}root.append(options);
-  if(state.phase==='question'){
+  const options=el('div',undefined,'options');for(const option of state.question.options){const b=button(option.title,()=>{if(busy||phase!=='question')return;stop();for(const child of options.children)child.disabled=true;status.textContent='正在核對答案…';send('answer',{selected:option.id});},'');b.disabled=phase!=='question';if(phase==='reveal'){if(option.id===state.question.answer.id)b.className='right';else if(option.id===state.question.result.selected)b.className='wrong';}options.append(b);}root.append(options);
+  if(phase==='question'){
    started=performance.now();timer=setInterval(()=>clock.textContent=((performance.now()-started)/1000).toFixed(1)+' 秒',100);
    audio??=new Audio();audio.volume=getVolume();audio.muted=getVolume()===0;audio.src=state.question.previewUrl;
    audio.onplaying=()=>status.textContent='';audio.onended=()=>status.textContent='試聽已結束，請作答。';audio.onerror=()=>fail('Apple 試聽載入失敗，本關不列入排名。請確認網路後重新挑戰。');play(status,unlock);
   }else{
    const points=el('p',undefined,'question-score');points.append(el('span','本題'),el('strong',String(state.question.result.points)),el('span','分'));root.append(points,el('p',state.question.answer.title));
-   const token=epoch;advance=setTimeout(()=>{if(token===epoch)send('next');},2800);
+   const token=epoch;advance=setTimeout(()=>{if(token!==epoch)return;if(finalReveal)render();else send('next');},finalReveal?2000:2800);
   }
-  const source=el('div',undefined,'source');source.append(el('span','試聽 provided courtesy of iTunes'));if(state.phase==='reveal'){const link=el('a','在 Apple 查看本題歌曲 ↗');link.href=state.question.answer.storeUrl;link.target='_blank';link.rel='noopener noreferrer';source.append(link);}root.append(source);
+  const source=el('div',undefined,'source');source.append(el('span','試聽 provided courtesy of iTunes'));if(phase==='reveal'){const link=el('a','在 Apple 查看本題歌曲 ↗');link.href=state.question.answer.storeUrl;link.target='_blank';link.rel='noopener noreferrer';source.append(link);}root.append(source);
  }
  function start(name){cancel();root.replaceChildren(el('h2','正在開始排名挑戰…'));audio=new Audio();send('start',{nickname:name});}
  return {start,cancel};

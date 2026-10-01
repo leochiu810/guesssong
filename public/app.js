@@ -1,6 +1,6 @@
 import {LocalRankedGame} from './ranking-local.js?v=0.7.2';
 import {RankingClient, rankingConfigured} from './ranking-client.js?v=0.7.2';
-import {createRankedUI, renderBoard} from './ranking-ui.js?v=0.7.2';
+import {createRankedUI, renderBoard} from './ranking-ui.js?v=0.7.2-delay1';
 import { Game, selectedPool, uniqueSongCount, challengePool, createBalancedRound } from './core.js?v=0.7.2';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
@@ -62,7 +62,7 @@ function answer(id) {
   advanceTimer = setTimeout(() => {
     if (token !== generation || !game?.next()) return;
     if (game.phase === 'finished') finish(); else showQuestion();
-  }, 2800);
+  }, game.index === 9 ? 2000 : 2800);
 }
 function finish() {
   stop(); $('final-score').textContent = game.total; $('final-correct').textContent = `答對 ${game.correct} / 10 題 · ${currentCategory.name}`;
