@@ -1,9 +1,9 @@
-import {createRound, challengePool, score} from './core.js?v=0.7.0';
+import {createRound, challengePool, score} from './core.js?v=0.7.1';
 export const THRESHOLDS = [500,600,700,800,900];
 export const SEASON = 'v1';
 export function nickname(value) {
  const name=String(value??'').trim().normalize('NFKC');
- if(!/^[\p{L}\p{N} _.-]{1,16}$/u.test(name))throw Error('暱稱請使用1至16個中英文字、數字、空格或 _ . -');
+ if(!/^[\p{L}\p{N}\p{M}\p{So}\p{Sk}\u200D _.-]{1,16}$/u.test(name))throw Error('暱稱可使用文字、數字與 Emoji，最多16個字元（組合 Emoji 可能占多個字元）。');
  return name;
 }
 function stage(state,categories,now){

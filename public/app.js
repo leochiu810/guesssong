@@ -1,7 +1,7 @@
-import {LocalRankedGame} from './ranking-local.js?v=0.7.0';
-import {RankingClient, rankingConfigured} from './ranking-client.js?v=0.7.0';
-import {createRankedUI, renderBoard} from './ranking-ui.js?v=0.7.0';
-import { Game, selectedPool, uniqueSongCount, challengePool } from './core.js?v=0.7.0';
+import {LocalRankedGame} from './ranking-local.js?v=0.7.1';
+import {RankingClient, rankingConfigured} from './ranking-client.js?v=0.7.1';
+import {createRankedUI, renderBoard} from './ranking-ui.js?v=0.7.1';
+import { Game, selectedPool, uniqueSongCount, challengePool } from './core.js?v=0.7.1';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 let artistInputs = [], practiceCategory;
@@ -173,7 +173,7 @@ async function showLeaderboard(){
 $('start-ranked').onclick=()=>{
  if(!cloudReady)return;
  const name=String($('ranking-nickname').value||'').trim().normalize('NFKC');
- if(!/^[\p{L}\p{N} _.-]{1,16}$/u.test(name)){$('ranking-setup-status').textContent='暱稱請使用1至16個中英文字、數字、空格或 _ . -';return;}
+ if(!/^[\p{L}\p{N}\p{M}\p{So}\p{Sk}\u200D _.-]{1,16}$/u.test(name)){$('ranking-setup-status').textContent='暱稱可使用文字、數字與 Emoji，最多16個字元（組合 Emoji 可能占多個字元）。';return;}
  stop();screen('ranked');rankedUI.start(name);
 };
 

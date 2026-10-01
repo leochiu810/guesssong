@@ -1,4 +1,4 @@
-import {rankingConfig} from './ranking-config.js?v=0.7.0';
+import {rankingConfig} from './ranking-config.js?v=0.7.1';
 export function rankingConfigured(config=rankingConfig){return /^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/i.test(config.url)&&!!config.publishableKey;}
 export class RankingClient {
  constructor(config=rankingConfig,storage){if(storage===undefined){try{storage=globalThis.localStorage;}catch{storage=null;}}this.config=config;this.storage=storage;this.session=null;this.key='guess-song-player:'+config.url;}
