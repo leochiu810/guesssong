@@ -43,7 +43,7 @@ export function createRankedUI({root,client,onExit,onBoard,getVolume,onVolume}){
    audio??=new Audio();audio.volume=getVolume();audio.muted=getVolume()===0;audio.src=state.question.previewUrl;
    audio.onplaying=()=>status.textContent='';audio.onended=()=>status.textContent='試聽已結束，請作答。';audio.onerror=()=>fail('Apple 試聽載入失敗，本關不列入排名。請確認網路後重新挑戰。');play(status,unlock);
   }else{
-   root.append(el('p',`${state.question.result.correct?'答對了':'這次沒猜中'} · 本題 ${state.question.result.points} 分`,'ranked-score'),el('p',state.question.answer.title));
+   const points=el('p',undefined,'question-score');points.append(el('span','本題'),el('strong',String(state.question.result.points)),el('span','分'));root.append(points,el('p',state.question.answer.title));
    const token=epoch;advance=setTimeout(()=>{if(token===epoch)send('next');},2800);
   }
   const source=el('div',undefined,'source');source.append(el('span','試聽 provided courtesy of iTunes'));if(state.phase==='reveal'){const link=el('a','在 Apple 查看本題歌曲 ↗');link.href=state.question.answer.storeUrl;link.target='_blank';link.rel='noopener noreferrer';source.append(link);}root.append(source);
