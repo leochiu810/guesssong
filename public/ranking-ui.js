@@ -50,8 +50,14 @@ export function createRankedUI({root,client,onExit,onBoard,getVolume,onVolume}){
  function start(name){cancel();root.replaceChildren(el('h2','正在開始排名挑戰…'));audio=new Audio();send('start',{nickname:name});}
  return {start,cancel};
 }
+export function bestByNickname(rows){
+ const compare=(a,b)=>b.passed-a.passed||b.total-a.total||String(a.achieved_at||'').localeCompare(String(b.achieved_at||''));
+ const best=new Map();
+ for(const row of Array.isArray(rows)?rows:[]){const key=String(row.nickname).normalize('NFKC').trim().toLowerCase();const previous=best.get(key);if(!previous||compare(row,previous)<0)best.set(key,row);}
+ return [...best.values()].sort(compare);
+}
 export function renderBoard(root,rows){
- root.replaceChildren();const entries=Array.isArray(rows)?rows:[];
+ root.replaceChildren();const entries=bestByNickname(rows);
  const table=el('table');table.className='ranking-table';table.setAttribute('aria-label','排行榜成績');const head=el('thead'),heading=el('tr');for(const title of ['名次','暱稱','通過關數','累積分數']){const th=el('th',title);th.scope='col';heading.append(th);}head.append(heading);table.append(head);
  const body=el('tbody');entries.forEach((row,i)=>{const tr=el('tr');for(const value of [i+1,row.nickname,row.passed+' / 5',row.total])tr.append(el('td',String(value)));body.append(tr);});
  if(!entries.length){const tr=el('tr'),td=el('td','尚無成績，來挑戰第一筆紀錄！','ranking-empty');td.colSpan=4;tr.append(td);body.append(tr);}

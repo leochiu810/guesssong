@@ -1,6 +1,6 @@
 import {LocalRankedGame} from './ranking-local.js?v=0.6.2';
 import {RankingClient, rankingConfigured} from './ranking-client.js?v=0.6.2';
-import {createRankedUI, renderBoard} from './ranking-ui.js?v=0.6.2-target1';
+import {createRankedUI, renderBoard} from './ranking-ui.js?v=0.6.2-names2';
 import { Game, selectedPool, uniqueSongCount, challengePool } from './core.js?v=0.6.2';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
@@ -176,6 +176,7 @@ $('start-ranked').onclick=()=>{
  if(!/^[\p{L}\p{N} _.-]{1,16}$/u.test(name)){$('ranking-setup-status').textContent='暱稱請使用1至16個中英文字、數字、空格或 _ . -';return;}
  stop();screen('ranked');rankedUI.start(name);
 };
+
 
 
 
