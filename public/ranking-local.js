@@ -1,4 +1,4 @@
-import {begin,transition,snapshot} from './ranking-engine.js?v=0.8.1';
+import {begin,transition,snapshot} from './ranking-engine.js?v=0.8.2';
 
 // All questions and timing stay in this browser. Only completed results leave it.
 export class LocalRankedGame {

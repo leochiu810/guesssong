@@ -1,7 +1,7 @@
-import {LocalRankedGame} from './ranking-local.js?v=0.8.1';
-import {RankingClient, rankingConfigured} from './ranking-client.js?v=0.8.1';
-import {createRankedUI, renderBoard} from './ranking-ui.js?v=0.8.1';
-import { Game, selectedPool, uniqueSongCount, challengePool, createBalancedRound } from './core.js?v=0.8.1';
+import {LocalRankedGame} from './ranking-local.js?v=0.8.2';
+import {RankingClient, rankingConfigured} from './ranking-client.js?v=0.8.2';
+import {createRankedUI, renderBoard} from './ranking-ui.js?v=0.8.2';
+import { Game, selectedPool, uniqueSongCount, challengePool, createBalancedRound } from './core.js?v=0.8.2';
 const $ = id => document.getElementById(id);
 let catalog, game, audio, tick, watchdog, advanceTimer, generation = 0, blocked = false, currentCategory;
 let artistInputs = [], practiceCategory;
@@ -57,7 +57,7 @@ function answer(id) {
   for (const b of $('options').children) { b.disabled = true; if (Number(b.dataset.id) === q.answer.id) { b.classList.add('right'); b.textContent = `✓ ${b.textContent}`; } else if (Number(b.dataset.id) === id) { b.classList.add('wrong'); b.textContent = `× ${b.textContent}`; } }
   $('correct').textContent = game.correct; $('answer-result').textContent = ''; $('answer-result').hidden = true;
   $('answer-points').textContent = result.points; $('live-score').textContent = game.total;
-  $('answer-title').textContent = q.answer.title; $('answer-artist').textContent = q.answer.artist + (q.answer.selectionNote ? ` · ${q.answer.selectionNote}` : ''); $('reveal').hidden = false;
+  $('answer-title').textContent = `${q.answer.title} · ${q.answer.artist}` + (q.answer.selectionNote ? ` · ${q.answer.selectionNote}` : ''); $('reveal').hidden = false;
   const token = generation;
   advanceTimer = setTimeout(() => {
     if (token !== generation || !game?.next()) return;
